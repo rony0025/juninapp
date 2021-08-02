@@ -1,0 +1,51 @@
+.filtro--destinos{
+  margin: 2.5rem 10rem 0.25rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__localizacion{
+    display: grid;
+    grid-template-columns: auto 10rem 10rem;
+    column-gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__categoria{
+    display: grid;
+    grid-template-columns: auto 10rem;
+    column-gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__button{
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 0.65rem 1.25rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: var(--bg-color);
+
+    &:hover{
+      background-color: hsla(204, 64%, 55%, 1);
+      box-shadow: 1px 1px 1px 1px hsla(204, 90%, 44%, 0.5);
+    }
+  }
+
+  &__etiqueta{
+    font-size: 1.5rem;
+    color: var(--bg-color);
+  }
+}
+
+.filtro__error{
+  display: none;
+  color: var(--rojo);
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 10rem;
+  margin-top: 1rem;
+}

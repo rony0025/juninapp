@@ -1,0 +1,138 @@
+.card{
+  --color-text: white;
+  border-radius: 10px;
+  box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+
+  &__imagen{
+    flex: 1;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4em;
+    padding: 0.75em;
+    box-sizing: border-box;
+    background-color: #7f8c8d;
+
+    &__titulo, &__lugar{
+      z-index: 10;
+      margin: 0;
+      font-size: 1.7em;
+      font-weight: bold;
+      color: var(--color-text);
+      text-shadow: 0px 0px 5px #000000;
+    }
+
+    &__titulo{
+      text-align: center;
+    }
+
+    &__lugar{
+      align-self: flex-end;
+    }
+
+    &__img{
+      position: absolute;
+      user-select: none;
+      margin: 0;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    
+    &::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent, transparent, rgba(0, 0, 0, 0.4));
+    }
+  }
+
+  &__descripcion{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 0.35em;
+    background-color: white;
+    padding: 0.75em;
+    align-items: center;
+    box-sizing: border-box;
+
+    .etiqueta{
+      grid-column: 1 / span 2;
+    }
+    
+    .flecha{
+      color: var(--text-color);
+      justify-self: end;
+      font-size: 1.5rem;
+
+      &:hover{
+        color: var(--bg-color);
+      }
+    }
+  }
+}
+
+.etiqueta{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bg-color);
+
+  &__icono{
+    font-size: 1.3em;
+  }
+
+  &__clase{
+    font-size: 0.9em;
+    border: 1px solid var(--bg-color);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+.corazon{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: hsla(6, 78%, 57%, 1);
+
+  &__icon{
+    cursor: pointer;
+    font-size: 1.5em;
+    &:hover{
+      color: hsla(6, 90%, 60%, 0.8);
+    }
+  }
+
+  &__numero{
+    font-size: 1.5em;
+  }
+
+  &--active{
+    .far{
+      display: none;
+    }
+  }
+
+  &--desactive{
+    .fas{
+      display: none;
+    }
+  }
+}

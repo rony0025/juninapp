@@ -1,0 +1,113 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'img/icon.png' %}" />
+    <link rel="stylesheet" href="{% static 'sass/estilos.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'icons/css/all.min.css' %}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="fijo">
+      <nav class="navbar">
+        <a href="{% url 'home' %}" class="navbar__logo">
+          <img src="{% static 'img/logo.png' %}" alt="logo.png" class="navbar__logo__imagen">
+        </a>
+        <div class="navbar__menu">
+          <a class="navbar__menu__enlace{% block enlace_destino %}{% endblock %}" href="{% url 'destinos' %}">Destinos</a>
+          <a class="navbar__menu__enlace{% block enlace_cultura %}{% endblock %}" href=".">Cultura</a>
+          <a class="navbar__menu__enlace{% block enlace_favoritos %}{% endblock %}" href="{% url 'favoritos' %}">Mis favoritos</a>
+          <div class="navbar__menu__buscador">
+            <form action="." class="buscador">
+              <input type="text" class="buscador__input buscador__input--focus" placeholder="Buscar">
+              <a class="buscador__icon buscador__icon--focus"><i class="fas fa-search"></i></a>              
+            </form>
+          </div>
+          
+          <div class="navbar__menu__desplegable">
+            <span class="navbar__menu__desplegable__icono">
+              <i class="fas fa-globe"></i>                    
+            </span>
+            <div class="navbar__menu__desplegable__lista">
+              <p class="navbar__menu__desplegable__lista__item navbar__menu__desplegable__lista__item--active">Español</p>
+              <p class="navbar__menu__desplegable__lista__item">Ingles</p>
+              <p class="navbar__menu__desplegable__lista__item">Portugues</p>
+            </div>
+          </div>
+    
+          <div class="navbar__menu__desplegable">
+            <span class="navbar__menu__desplegable__icono">
+              {% if user.is_authenticated %}
+                <img src="{{ user.imagen }}" alt="perfil.png" width="30px" style="border-radius: 50%;" >
+              {% else %}
+                <i class="fas fa-user"></i>
+              {% endif %}
+            </span>
+            {% if user.is_authenticated %}
+              <div class="navbar__menu__desplegable__lista">
+                <h3 class="navbar__menu__desplegable__lista__titulo">{{ user.nombre }}</h3>
+                <a class="navbar__menu__desplegable__lista__google" href="{% url 'logout' %}"><span><i class="fab fa-google"></i></span>Salir</a>
+              </div>
+            {% else %}
+              <div class="navbar__menu__desplegable__lista">
+                <div class="navbar__menu__desplegable__lista__logo">
+                  <img class="navbar__menu__desplegable__lista__logo__imagen" src="{% static 'img/logo.png' %}" alt="logo.png">
+                </div>
+                <h3 class="navbar__menu__desplegable__lista__titulo">Ingresa a tu cuenta</h3>
+                <a class="navbar__menu__desplegable__lista__google" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>Continuar con google</a>
+              </div>
+            {% endif %}
+          </div>
+    
+        </div>
+      </nav>
+    </div>
+    {% block content %}{% endblock %}
+    <footer class="footer_container">
+      <div class="footer">
+        <div class="footer__redes-sociales">
+          <p class="footer__redes-sociales__texto">Buscanos en:</p>
+          <a href="." class="footer__redes-sociales__icono"><i class="fab fa-facebook"></i></a>
+          <a href="." class="footer__redes-sociales__icono"><i class="fab fa-twitter"></i></a>
+          <a href="." class="footer__redes-sociales__icono"><i class="fab fa-instagram-square"></i></a>
+          <a href="." class="footer__redes-sociales__icono"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer__contacto">
+          <span href="." class="footer__contacto__icono"><i class="fas fa-map-marker-alt"></i></span>
+          <span href="." class="footer__contacto__texto">Calle San Cristobal 245 Arequipa</span>
+          <span href="." class="footer__contacto__icono"><i class="far fa-envelope"></i></span>
+          <span href="." class="footer__contacto__texto">correo@gmail.com</span>
+          <span href="." class="footer__contacto__icono"><i class="fas fa-phone-alt"></i></span>
+          <span href="." class="footer__contacto__texto">123-1564894</span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal-login" class="modal modal--desactive">
+      <div class="login">
+        <button id="button-close" class="modal__button"><i class="fas fa-times"></i></button>
+        <div class="login__imagen-container">
+          <img class="login__imagen-container__imagen" src="{% static 'img/logo.png' %}" alt="logo.png">
+        </div>
+        <h3 class="login__titulo">Ingresa a tu cuenta</h3>
+        <a class="login__button" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>Continuar con google</a>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+      activarAnimacionNavbar();
+      activarModal();
+    </script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

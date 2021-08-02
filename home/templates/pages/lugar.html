@@ -1,0 +1,405 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ nombre }}{% endblock %}
+{% block content %}
+<div class="slide">
+  <img class="slide__fondo" src="{{ recurso.imagen }}" alt="{{ recurso.nombre }}">
+  <h2 class="slide__titulo">{{ recurso.nombre }}</h2>
+  <h3 class="slide__subtitulo">{{ recurso.subtitulo }}</h3>
+  <div class="slide__datos">
+    <div class="slide__datos__corazon corazon {% if recurso.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+      <span class="corazon__icon" onclick="addFavoritos(event, '{{ recurso.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+      <span class="corazon__numero">{{ recurso.corazones }}</span>
+    </div>
+    <div class="slide__datos__ubicacion">
+      <span><i class="fas fa-map-marker-alt"></i></span>
+      <span>{{ recurso.provincia }}</span>
+      <span class="slide__datos__ubicacion__circulo"><i class="fas fa-circle"></i></span>
+      <span>{{ recurso.distrito }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="etiqueta-main">
+  <span class="etiqueta-main__icono"><i class="fas fa-tag"></i></span>
+  <span class="etiqueta-main__clase">{{ recurso.categoria }}</span>
+</div>
+
+
+<p class="parrafo">{{ recurso.descripcion }}</p>
+
+<div class="mapa-container">
+  <div id="map" class="map">
+  </div>
+</div>
+
+<div id="calificacion" class="calificacion"></div>
+<form id="calificacion-formulario" class="calificacion-form"></form>
+
+<h4 class="recomendados__titulo">Recomendados para ti</h4>
+<div class="recomendados">
+  <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
+  <div class="recomendados__galeria">
+    {% for card in recomendados %}
+      <div class="card">
+        <div class="card__imagen">
+          <img class="card__imagen__img" src="{{ card.image }}" alt="{{ card.nombre }}">
+          <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+          <p class="card__imagen__lugar">{{ card.provincia }}</p>
+        </div>
+        <div class="card__descripcion">
+          <div class="etiqueta">
+            <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+            <span class="etiqueta__clase">{{ card.categoria }}</span>
+          </div>
+            <div class="corazon {% if card.corazon.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+            <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+            <span class="corazon__numero">{{ card.corazon.contador }}</span>
+          </div>
+          <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
+</div>
+
+<section id="comentarios__seccion" class="comentarios">
+  <h4 class="comentarios__titulo">Comentarios <span id="num-comentarios" class="comentarios__titulo__mas">({{ comentarios|length }} opiniones)</span></h4>
+  <form class="comentarios__formulario">
+    <div class="comentarios__formulario__avatar">
+      {% if user.is_authenticated %}
+        <img class="comentarios__formulario__avatar__imagen" src="{{ user.imagen }}" alt="{{ user.nombre }}">
+      {% else %}
+        <span class="comentarios__formulario__avatar__icon"><i class="fas fa-user"></i></span>
+      {% endif %}
+    </div>
+    <textarea id="comentario-input" name="comentario" class="comentarios__formulario__input" placeholder="Añadir comentario"></textarea>
+    <button type="submit" class="comentarios__formulario__button" onclick="enviarComentario(event)"><i class="far fa-paper-plane"></i></button>
+  </form>
+  <div id="comentarios-list"></div>
+  <div id="ver-mas"></div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script>
+  activarRecomendaciones();
+
+  function cambiarEstrella(score, criterio){
+    let barra = document.getElementById(criterio + "-barra");
+    let contador = document.getElementById(criterio + "-contador");
+    let input = document.getElementById(criterio + "-input");
+    barra.style.background = "linear-gradient(to right, var(--bg-color) " + score * 20 + "%, white 0)";
+    input.value = score;
+    contador.innerHTML = score + " estrellas";
+  }
+
+  function reiniciarEstrella(event, criterio){
+    event.preventDefault();
+    let barra = document.getElementById(criterio + "-barra");
+    let contador = document.getElementById(criterio + "-contador");
+    let input = document.getElementById(criterio + "-input");
+    barra.style.background = "linear-gradient(to right, var(--bg-color) 0%, white 0)";
+    input.value = 0;
+    contador.innerHTML = "0 estrellas";
+  }
+
+  function enviarCalificacion(event){
+    event.preventDefault();
+    let formulario = document.getElementById("calificacion-formulario");
+    let formData = new FormData(formulario);
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    let formMemo = document.getElementById("calificacion-formulario").innerHTML;
+
+    document.getElementById("calificacion-formulario").innerHTML = `
+    <h4 class="calificacion__titulo">Actualizando ...</h4>
+    `;
+    
+    fetch(`/api/update/calificacion?nombre=${nombre}&accesibilidad=${formData.get("Accesibilidad")}&aforo=${formData.get("Aforo")}&eco_amigable=${formData.get("EcoAmigable")}&educativo=${formData.get("Educativo")}&recreacional=${formData.get("Recreacional")}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.error && data.error.message == "No tiene los permisos") {
+          let modal = document.getElementById("modal-login");
+          if(modal.classList.contains("modal--desactive"))
+            modal.classList.replace("modal--desactive", "modal--active")
+          document.getElementById("calificacion").style.display = "grid";
+          document.getElementById("calificacion-formulario").style.display = "none";
+          document.getElementById("calificacion-formulario").innerHTML = formMemo;
+        }
+        if (data.successful) {
+          generarCalificacion();
+        }
+      });
+  }
+
+  function generarCriterio(criterio, puntaje){
+    criterioHTML = `
+    <div class="criterio">
+      <span class="texto">${criterio}</span>
+      <div class="estrella">
+        <div class="estrella__barra" style="background: linear-gradient(to right, var(--bg-color) ${puntaje}%, white 0);">
+          <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+          <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+          <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+          <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+          <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+        </div>
+        <div class="estrella__mascara">
+          <span class="estrella__mascara__borde"><i class="far fa-star"></i></span>
+          <span class="estrella__mascara__borde"><i class="far fa-star"></i></span>
+          <span class="estrella__mascara__borde"><i class="far fa-star"></i></span>
+          <span class="estrella__mascara__borde"><i class="far fa-star"></i></span>
+          <span class="estrella__mascara__borde"><i class="far fa-star"></i></span>
+        </div>
+      </div>
+      <span class="numero">${puntaje / 20}</span>
+    </div>`;
+    return criterioHTML;
+  }
+
+  function generarCriterioButton(criterio, puntaje){
+    criterioHTML = `
+    <div class="calificacion__criterios">
+      <div class="criterio">
+        <span class="texto">${criterio}</span>
+        <div class="estrella">
+          <div id="${criterio}-barra" class="estrella__barra" style="background: linear-gradient(to right, var(--bg-color) ${puntaje}%, white 0);">
+            <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+            <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+            <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+            <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+            <span class="estrella__barra__item"><i class="fas fa-star"></i></span>
+          </div>
+          <div class="estrella__mascara">
+            <span class="estrella__mascara__borde"><i class="far fa-star" onclick="cambiarEstrella(1, '${criterio}')"></i></span>
+            <span class="estrella__mascara__borde"><i class="far fa-star" onclick="cambiarEstrella(2, '${criterio}')"></i></span>
+            <span class="estrella__mascara__borde"><i class="far fa-star" onclick="cambiarEstrella(3, '${criterio}')"></i></span>
+            <span class="estrella__mascara__borde"><i class="far fa-star" onclick="cambiarEstrella(4, '${criterio}')"></i></span>
+            <span class="estrella__mascara__borde"><i class="far fa-star" onclick="cambiarEstrella(5, '${criterio}')"></i></span>
+          </div>
+        </div>
+        <span id="${criterio}-contador" class="indicador">${puntaje / 20} estrellas</span>
+        <button class="button" onclick="reiniciarEstrella(event, '${criterio}')">Reiniciar</button>
+        <input id="${criterio}-input" type="hidden" name="${criterio}" value="${puntaje / 20}">
+      </div>
+    </div>`;
+    return criterioHTML;
+  }
+
+  function activarCalificacion(){
+    if (document.getElementById("calificacion").style.display == "grid"){
+      document.getElementById("calificacion").style.display = "none";
+      document.getElementById("calificacion-formulario").style.display = "flex";
+    }
+    else{
+      document.getElementById("calificacion").style.display = "grid";
+      document.getElementById("calificacion-formulario").style.display = "none";
+    }
+  }
+
+  function iniciarMap(){
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    fetch(`/api/coordenadas?nombre=${nombre}`)
+    .then(response => response.json())
+    .then(data => {
+      let coord = {lat: data.latitud, lng: data.longuitud};
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: coord
+      });
+      let marker = new google.maps.Marker({
+        position: coord,
+        map: map,
+        title: 'Mapa Cargado!'
+      });
+    });
+  }
+
+  function generarFormulario(mi_calificacion){
+    let criteriosButtonHTML = "";
+    for (const key in mi_calificacion) {
+      if (Object.hasOwnProperty.call(calificacion, key)) {
+        criteriosButtonHTML += generarCriterioButton(key, mi_calificacion[key] * 20);
+      }
+    }
+    let calificacionFormHTML = `<h4 class="calificacion__titulo">Calificacion</h4>
+    <div class="calificacion__criterios">${criteriosButtonHTML}</div>
+    <button class="button" type="submit" onclick="enviarCalificacion(event)">Enviar calificacion</button>`;
+    return calificacionFormHTML;
+  };
+
+  function generarCalificion(opiniones, labelsArray, dataArray){
+    let criteriosHTML = "";
+    for (let i = 0; i < 5; i++) {
+      criteriosHTML += generarCriterio(labelsArray[i], dataArray[i] * 20);
+    }
+    let calificacionHTML = `
+    <h4 class="calificacion__titulo">Calificacion <span class="calificacion__titulo__mas">(${opiniones} opiniones)</span></h4>
+    <div id="criterios" class="calificacion__criterios">
+      ${criteriosHTML}
+    </div>
+    <div class="calificacion__grafica">
+      <canvas id="grafica_radar" class="calificacion__grafica__radar" width="150" height="80"></canvas>
+    </div>
+    <button class="button" onclick="activarCalificacion()">Calificar</button>`;
+    return calificacionHTML;
+  };
+
+  function generarCalificacion() {
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+    fetch(`/api/calificacion?nombre=${nombre}`)
+    .then(response => response.json())
+    .then(data => {
+      let labelsArray = [];
+      let dataArray = [];
+      calificacion = data.calificacion;
+      for (const key in calificacion) {
+        if (Object.hasOwnProperty.call(calificacion, key)) {
+          labelsArray.push(key);
+          dataArray.push(calificacion[key]);
+        }
+      }
+      document.getElementById("calificacion").innerHTML = generarCalificion(data.opiniones, labelsArray, dataArray);
+      document.getElementById("calificacion-formulario").innerHTML = generarFormulario(data.mi_calificacion);
+      document.getElementById("calificacion").style.display = "grid";
+      document.getElementById("calificacion-formulario").style.display = "none";
+      
+      var marksCanvas = document.getElementById("grafica_radar");
+      var marksData = {
+        labels: labelsArray,
+        datasets: [{
+          backgroundColor: "#3498db80",
+          borderColor: "#3498db",
+          fill: true,
+          radius: 4,
+          pointRadius: 4,
+          pointBorderWidth: 3,
+          pointBackgroundColor: "#3498db",
+          pointBorderColor: "#3498db",
+          pointHoverRadius: 5,
+          data: dataArray
+        }]
+      };
+  
+      var chartOptions = {
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            min: 0,
+            max: 5,
+            stepSize: 1
+          },
+          pointLabels: {
+            fontSize: 18
+          }
+        },
+        legend: {
+          position: 'none'
+        }
+      };
+  
+      var radarChart = new Chart(marksCanvas, {
+        type: 'radar',
+        data: marksData,
+        options: chartOptions
+      });
+    });
+  }
+
+  function generarComentarios(cant_comentarios, comentarios = []){
+    let comentarioHTML = "";
+    if (comentarios.length > 0){
+      comentarios.forEach(({id, fecha, editable, usuario, descripcion}) => {
+        comentarioHTML += `<div>
+          <div class="comentarios__item">
+            <div class="comentarios__item__avatar">
+              <img class="comentarios__item__avatar__imagen" src="${usuario.avatar}" alt="${usuario.nombre}">
+            </div>
+            <div class="comentarios__item__datos">
+              <span class="comentarios__item__datos__nombre">${usuario.nombre}
+                ${editable ? `<button class="comentarios__item__datos__nombre__button" onclick="borrarComentario(${id})">[ Eliminar ]</button>` : ""}
+              </span>
+              <span class="comentarios__item__datos__fecha">${fecha}</span>
+            </div>
+          </div>
+          <div class="comentarios__item__datos__descripcion">
+            ${descripcion}
+          </div>
+        </div>`
+      });
+    }
+    else{
+      comentarioHTML += `<h4 class="comentarios__vacio">Aun nadie ha comentado</h4>`
+    }
+    return comentarioHTML;
+  }
+
+  function pedirComentario(pagina) {
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    fetch(`/api/get/comentario/?nombre=${nombre}&pagina=${pagina}`)
+    .then(response => response.json())
+    .then(data => {
+      if(data.error){
+        console.log(data);
+      }
+      else{
+        comentarioHTML = generarComentarios(data.cant_comentarios, data.comentarios);
+        if(pagina == 1)
+          document.getElementById("comentarios-list").innerHTML = comentarioHTML;
+        else
+          document.getElementById("comentarios-list").innerHTML += comentarioHTML;
+        if (data.siguiente_pagina)
+          document.getElementById("ver-mas").innerHTML = `<button class="comentarios__button" onclick="pedirComentario(${data.siguiente_pagina})">Cargar más</button>`;
+        else
+          document.getElementById("ver-mas").innerHTML = "";
+        document.getElementById("num-comentarios").innerHTML = `(${data.cant_comentarios} opiniones)`
+      }
+    });
+  }
+
+  function enviarComentario(event){
+    event.preventDefault();
+    let comentario = document.getElementById("comentario-input").value;
+    let nombre = document.querySelector(".slide__titulo").innerHTML;
+    document.getElementById("comentario-input").value = "";
+    if(comentario != ""){
+      fetch(`/api/add/comentario?nombre=${nombre}&comentario=${comentario}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.error && data.error.message == "No tiene los permisos") {
+            let modal = document.getElementById("modal-login");
+            if(modal.classList.contains("modal--desactive"))
+              modal.classList.replace("modal--desactive", "modal--active")
+          }
+          if (data.successful) {
+            pedirComentario(1)
+          }
+        });
+    }
+  }
+
+  function borrarComentario(id){
+    fetch(`/api/delete/comentario/?id=${id}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (data.error && data.error.message == "No tiene los permisos") {
+          let modal = document.getElementById("modal-login");
+          if(modal.classList.contains("modal--desactive"))
+            modal.classList.replace("modal--desactive", "modal--active")
+        }
+        if (data.successful) {
+          pedirComentario(1)
+        }
+      });
+  }
+
+  pedirComentario(1);
+  generarCalificacion();
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMk5chJWP3Ly5JpJkzWAfDn_x1a2je4no&callback=iniciarMap"></script>
+{% endblock %}

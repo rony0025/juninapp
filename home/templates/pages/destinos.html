@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Destinos{% endblock %}
+{% block enlace_destino %} navbar__menu__enlace--active{% endblock %}
+{% block content %}
+
+<div class="slide">
+  <img class="slide__fondo" src="{% static 'img/destinos.png' %}" alt="destinos.png">
+  <h2 class="slide__titulo">Destinos</h2>
+  <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+</div>
+
+<div class="filtro--destinos">
+  <div class="filtro--destinos__localizacion">
+    <span class="filtro--destinos__etiqueta">Por localización:</span>
+    <div class="selection">
+      <div class="selection__box">
+        <span id="provincia" class="selection__box__content selection__box__content--void">Provincia</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div class="selection__option selection__option--close">
+        {% for provincia in provincias %}
+          <div class="selection__option__item" onclick="generarDistritos('{{provincia.nombre}}')">{{provincia.nombre}}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <div id="distritoSelection" class="selection selection--disabled">
+      <div class="selection__box">
+        <span id="distrito" class="selection__box__content selection__box__content--void">Distrito</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div id="distritoList" class="selection__option selection__option--close"></div>
+    </div>
+  </div>
+
+  <div class="filtro--destinos__categoria">
+    <span class="filtro--destinos__etiqueta">Por categoria:</span>
+    <div class="selection">
+      <div class="selection__box">
+        <span id="categoria" class="selection__box__content selection__box__content--void">Categoria</span>
+        <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+      </div>
+      <div class="selection__option selection__option--close">
+        {% for categoria in categorias %}
+          <div class="selection__option__item">{{categoria.nombre}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <a class="filtro--destinos__button" href="javascript:;" onclick="consultarLugares()">Explorar</a>
+</div>
+<p id="error" class="filtro__error">*Complete al menos un campo antes de explorar</p>
+
+<div id="resultadosLugares">
+  {% for categoria, categoriaCards in recomendados.items %}
+    <h4 class="recomendados__titulo">{{ categoria }} recomendados</h4>
+    <div class="recomendados">
+      <div class="recomendados__galeria">
+        {% for card in categoriaCards %}
+          <div class="card">
+            <div class="card__imagen">
+              <img class="card__imagen__img" src="{{ card.image }}" alt="{{ card.nombre }}">
+              <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+              <p class="card__imagen__lugar">{{ card.provincia }}</p>
+            </div>
+            <div class="card__descripcion">
+              <div class="etiqueta">
+                <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+                <span class="etiqueta__clase">{{ card.categoria }}</span>
+              </div>
+              <div class="corazon {% if card.corazon.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+                <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+                <span class="corazon__numero">{{ card.corazon.contador }}</span>
+              </div>
+              <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div id="recomendaciones">
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    activarAnimacionMenusDesplegables();
+
+    let dataCard = []
+    // Obtiene los resultados de la consulta de recursos turisticos y los muestra en el navegador
+    function consultarLugares(){
+      let provincia = document.getElementById("provincia").innerText;
+      let distrito = document.getElementById("distrito").innerText;
+      let categoria = document.getElementById("categoria").innerText;
+      if(provincia == "Provincia" && distrito == "Distrito" && categoria == "Categoria"){
+        document.getElementById("error").style.display = "block";
+      }
+      else{
+        document.getElementById("error").style.display = "none";
+        let resultado = document.getElementById("resultadosLugares");
+        fetch(`/api/destinos/?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
+        .then(response => response.json())
+        .then(data => {
+          dataCard = data;
+          let resultadoHTML = "";
+          if(data.length == 0){
+            let recomendaciones = document.getElementById("recomendaciones");
+            resultadoHTML = `
+            <div class="resultados">
+              <h4 class="resultados__titulo">Resultados</h4>
+              <h4 class="resultados__respuesta">No se encontraron coincidencias</h4>
+            </div>`;
+            resultado.innerHTML = resultadoHTML;
+            pedirRecomendaciones(recomendaciones);
+          }
+          else{
+            let recomendaciones = document.getElementById("recomendaciones");
+            let cardsHTML = "";
+            recomendaciones.innerHTML = "";
+            data.forEach(({link, nombre, provincia, categoria, corazon}) => {
+              cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+            });
+            resultadoHTML += `
+            <div class="resultados">
+              <h4 class="resultados__titulo">Resultados</h4>
+              <div class="resultados__galeria">
+                ${cardsHTML}
+              </div>
+            </div>
+            `;
+          }
+          resultado.innerHTML = resultadoHTML;
+        });
+      }
+    }
+  </script>
+{% endblock %}

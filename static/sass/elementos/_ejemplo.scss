@@ -1,0 +1,40 @@
+.ejemplo{
+  margin: 2.5rem 10rem 0.25rem 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+.seccion{
+  .card{
+    width: 18rem;
+    height: 22rem;
+  }
+}
+
+.imagen-container{
+  margin: 0 10rem;
+
+  &__titulo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.25rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+  }
+
+  &__imagen {
+    box-sizing: border-box;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  &__subtitulo{
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+}
+

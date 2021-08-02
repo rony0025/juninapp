@@ -1,0 +1,36 @@
+// variables
+
+:root {
+  --text-color: hsla(210, 29%, 24%, 1);
+  --bg-color: hsla(204, 64%, 44%, 1);
+  --inactive: rgb(153, 153, 153);
+  --rojo: hsla(6, 78%, 57%, 1);
+  --black: black;
+
+}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@import "normalize.scss";
+@import "elementos/navbar.scss";
+@import "elementos/buscador.scss";
+@import "elementos/slide.scss";
+@import "elementos/main.scss";
+@import "elementos/seccion.scss";
+@import "elementos/compartir.scss";
+@import "elementos/recomendados.scss";
+@import "elementos/card.scss";
+@import "elementos/footer.scss";
+
+@import "elementos/carousel.scss";
+@import "elementos/selection.scss";
+@import "elementos/filtro-destinos";
+@import "elementos/resultados.scss";
+@import "elementos/comentarios.scss";
+@import "elementos/mapa.scss";
+@import "elementos/filtro-favoritos.scss";
+@import "elementos/ejemplo.scss";
+@import "elementos/modal.scss";
+@import "elementos/calificacion.scss";

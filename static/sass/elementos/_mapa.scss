@@ -1,0 +1,12 @@
+.mapa-container{
+  margin: 1.5rem 10rem;
+
+  .map {
+    box-sizing: border-box;
+    width: 100%;
+    height: 28rem;
+    border-radius: 8px;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+

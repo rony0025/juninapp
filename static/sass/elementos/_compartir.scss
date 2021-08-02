@@ -1,0 +1,44 @@
+.separador{
+  position: relative;
+  width: 100%;
+  background-color: var(--text-color);
+
+  &::before{
+    z-index: 10;
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-image: linear-gradient(to left, transparent, transparent,  var(--text-color)), url("/static/img/compartir.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+.compartir{
+  position: relative;
+  z-index: 100;
+  margin: 0 10rem;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  &__titulo{
+    width: 50%;
+    color: white;
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  &__descripcion{
+    width: 50%;
+    color: white; 
+    margin: 0;
+    font-size: 22px;
+  }
+}

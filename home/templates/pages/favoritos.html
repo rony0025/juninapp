@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mis favoritos{% endblock %}
+{% block enlace_favoritos %} navbar__menu__enlace--active{% endblock %}
+{% block content %}
+<div class="slide">
+  <img class="slide__fondo" src="{% static 'img/favoritos.jpg' %}" alt="destinos.png">
+  <h2 class="slide__titulo">Mis favoritos</h2>
+  <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+</div>
+
+<p class="titulo">Mis favoritos</p>
+<p class="subtitulo">Aún no tienes tus lugares, experiencia y atractivos turisticos favoritos.</p>
+<div class="seccion">
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Guarda tus lugares, experiencia y atractivos turisticos</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+  </div>
+  
+  <div class="card">
+    <div class="card__imagen">
+      <img class="card__imagen__img" src="https://media-cdn.tripadvisor.com/media/photo-s/12/37/43/f2/banos-termales-de-huiscapuquio.jpg" alt="card de recurso turistico">
+      <h5 class="card__imagen__titulo">Aguas Termales De Huarmi Puquio</h5>
+      <p class="card__imagen__lugar">Junín</p>
+    </div>
+    <div class="card__descripcion">
+      <div class="etiqueta">
+        <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+        <span class="etiqueta__clase">Sitios Naturales</span>
+      </div>
+      <div class="corazon">
+        <span class="corazon__icon"><i class="fas fa-heart"></i></span>
+        <span class="corazon__numero">357</span>
+      </div>
+      <span class="flecha"><i class="fas fa-arrow-right"></i></span>
+    </div>
+  </div>
+</div>
+<div class="imagen-container">
+  <p class="imagen-container__titulo">Administra tus recursos favoritos</p>
+  <img class="imagen-container__imagen" src="{% static 'img/favoritos_auth.jpg' %}" alt="favoritos con login">
+  <p class="imagen-container__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+
+</div>
+
+{% endblock %}

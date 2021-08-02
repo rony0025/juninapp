@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mis favoritos{% endblock %}
+{% block enlace_favoritos %} navbar__menu__enlace--active{% endblock %}
+{% block content %}
+<h2 class="favoritos__titulo">Mis favoritos</h2>
+<div class="favoritos">
+  <div class="favoritos__filtro">
+    <form action="." class="buscador">
+      <input type="text" class="buscador__input buscador__input--focus" placeholder="Buscar">
+      <a class="buscador__icon buscador__icon--focus"><i class="fas fa-search"></i></a>              
+    </form>
+    <div class="favoritos__filtro__provincia">
+      <span class="favoritos__filtro__etiqueta">Provincia:</span>
+      <div class="selection">
+        <div class="selection__box">
+          <span id="provincia" class="selection__box__content selection__box__content--void">Provincia</span>
+          <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+          <input id="provincia" type="hidden" value="Provincia">
+        </div>
+        <div class="selection__option selection__option--close">
+          {% for provincia in provincias %}
+            <div class="selection__option__item" onclick="generarDistritos('{{provincia}}')">{{provincia.nombre}}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="favoritos__filtro__distrito">
+      <span class="favoritos__filtro__etiqueta">Distrito:</span>
+      <div id="distritoSelection" class="selection selection--disabled">
+        <div class="selection__box">
+          <span id="distrito" class="selection__box__content selection__box__content--void">Distrito</span>
+          <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
+        </div>
+        <div id="distritoList" class="selection__option selection__option--close"></div>
+      </div>
+    </div>
+    
+    <span class="favoritos__filtro__etiqueta">Sitios o lugares turisticos</span>
+    {% for categoria in categorias.tangibles %}
+      <div class="checklist favoritos__filtro__checklist">
+        <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
+      </div>
+    {% endfor %}
+    <span class="favoritos__filtro__etiqueta">Cultura</span>
+    {% for categoria in categorias.no_tangibles %}
+      <div class="checklist favoritos__filtro__checklist">
+        <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
+      </div>
+    {% endfor %}
+    <a class="filtro--destinos__button" href="javascript:;" onclick="pedirCards()">Explorar</a>
+  </div>
+  <div class="favoritos__resultado">
+
+    <h3 class="favoritos__resultado__titulo">Resultados</h3>
+    <div class="favoritos__resultado__galeria"> </div>
+    <div class="paginacion"> </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+  <script>
+    activarAnimacionMenusDesplegables();
+    activarCheckList();
+    
+    let dataCard = [];
+    let limiteCardsPage = 9;
+    let numPage = 0;
+    let currentPage = -1;
+
+    function mostrarPageCards(page){
+      if(page <= numPage){
+        cardGalery = document.querySelector(".favoritos__resultado__galeria");
+        cardsHTML = "";
+        for (let i = (page - 1)*limiteCardsPage; i < dataCard.length && i < (page)*limiteCardsPage; i++) {
+          let {image, nombre, provincia, categoria, corazon} = dataCard[i];
+          cardsHTML += generarCardHTML(image, nombre, provincia, categoria, corazon.contador, corazon.marcado);
+        }
+        cardGalery.innerHTML = cardsHTML;
+      }
+    }
+
+    function generarButtonsPageHTML(page){
+      let buttonsHTML = 
+      ` <span id="btn-left" class="paginacion__button"><i class="fas fa-chevron-left"></i></span>
+        <span id="num_page">${page}</span>
+        <span id="btn-right" class="paginacion__button"><i class="fas fa-chevron-right"></i></span>`;
+      return buttonsHTML;
+    }
+
+    function activarButtonsPage(){
+      btn_left = document.getElementById("btn-left");
+      btn_right = document.getElementById("btn-right");
+      pageHtml = document.getElementById("num_page")
+
+      btn_left.classList.add("paginacion__button--active");
+      btn_right.classList.add("paginacion__button--active");
+
+      if(currentPage == 1){
+        btn_left.classList.replace("paginacion__button--active", "paginacion__button--disabled");
+      }else if(currentPage == numPage){
+        btn_right.classList.replace("paginacion__button--active", "paginacion__button--disabled");
+      }
+
+      btn_left.addEventListener("click", (e) => {
+        if(e.currentTarget.classList.contains("paginacion__button--active")){
+          btn_right = document.getElementById("btn-right");
+          currentPage--;
+          if(currentPage <= 1){
+            e.currentTarget.classList.replace("paginacion__button--active", "paginacion__button--disabled");
+          }
+          if(btn_right.classList.contains("paginacion__button--disabled")){
+            btn_right.classList.replace("paginacion__button--disabled", "paginacion__button--active");
+          }
+          document.getElementById("num_page").innerText = currentPage;
+          mostrarPageCards(currentPage);
+        }
+      });
+
+      btn_right.addEventListener("click", (e) => {
+        if(e.currentTarget.classList.contains("paginacion__button--active")){
+          btn_left = document.getElementById("btn-left");
+          currentPage++;
+          if(currentPage >= numPage){
+            e.currentTarget.classList.replace("paginacion__button--active", "paginacion__button--disabled");
+          }
+          if(btn_left.classList.contains("paginacion__button--disabled")){
+            btn_left.classList.replace("paginacion__button--disabled", "paginacion__button--active");
+          }
+          document.getElementById("num_page").innerText = currentPage;
+          mostrarPageCards(currentPage);
+        }
+      });
+    }
+
+    function pedirCards(){
+      let provincia = document.getElementById("provincia").innerText;
+      let distrito = document.getElementById("distrito").innerText;
+      let categoria;
+      let checklist = document.querySelectorAll(".checklist__input");
+      (checklist) && checklist.forEach(checkitem => {
+        if(checkitem.checked){
+          categoria = checkitem.value;
+        }
+      });
+
+      cardGalery = document.querySelector(".favoritos__resultado__galeria");
+      cardGalery.innerHTML = '<h3 class="respuesta">Cargando...</h3>';
+
+      let url = `/api/favoritos?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`;
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if(data.length > 0){
+            dataCard = data;
+            numPage = Math.ceil(dataCard.length / limiteCardsPage);
+            currentPage = 1;
+            mostrarPageCards(currentPage);
+            if(numPage > 1){
+              paginador = document.querySelector(".paginacion");
+              paginador.innerHTML = generarButtonsPageHTML(currentPage);
+              activarButtonsPage();
+            }
+            else{
+              paginador = document.querySelector(".paginacion");
+              paginador.innerHTML = "";
+            }
+          }
+          else{
+            cardGalery = document.querySelector(".favoritos__resultado__galeria");
+            paginador = document.querySelector(".paginacion");
+            cardGalery.innerHTML = '<h3 class="respuesta">No se encontraron coincidencias</h3>';
+            paginador.innerHTML = "";
+          }
+        })
+    }
+    pedirCards()
+  </script>
+{% endblock %}

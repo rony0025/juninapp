@@ -1,0 +1,41 @@
+.titulo{
+  margin: 2.5rem 10rem 0.25rem 10rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.subtitulo{
+  margin: 0 10rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.etiqueta-main{
+  margin: 1.2rem 10rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  grid-column: 1 / span 2;
+  color: var(--bg-color);
+
+  &__icono{
+    font-size: 2rem;
+  }
+
+  &__clase{
+    font-size: 1.2rem;
+    border: 1px solid var(--bg-color);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+.parrafo{
+  margin: 1rem 10rem;
+  font-size: 1.25rem;
+  color: var(--text-color);
+}

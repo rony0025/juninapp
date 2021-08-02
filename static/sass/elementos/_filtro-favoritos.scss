@@ -1,0 +1,153 @@
+.favoritos{
+  margin: 1rem 10rem 2rem 10rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+
+  &__titulo{
+    margin: 5rem 10rem 0 10rem;
+    text-align: center;
+    color: var(--bg-color);
+  }
+
+  &__filtro{
+    max-width: 30rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 2px solid var(--bg-color);
+    border-radius: 5px;
+    padding: 10px;
+
+    .buscador{
+      &__input{
+        border-color: var(--bg-color);
+        color: var(--bg-color);
+        &::placeholder{
+          color: var(--bg-color);
+        }
+      }
+      &__icon{
+        color: var(--bg-color);
+      }
+    }
+
+    &__provincia, &__distrito{
+      display: grid;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+
+      .favoritos__filtro__etiqueta{
+        color: var(--bg-color);
+        font-size: 1.3em;
+      }
+
+      .selection{
+        width: 10rem;
+        &__box__content{
+          font-size: 1.2rem;
+        }
+        &__option__item{
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    &__checklist{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .checklist__marca{
+        box-sizing: border-box;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid var(--bg-color);
+
+        &--active{
+          background-color: var(--bg-color);
+        }
+
+        &--desactive{
+          background-color: white;
+        }
+      }
+      .checklist__etiqueta{
+        color: var(--bg-color);
+        font-size: 1.2rem;
+      }
+
+      .checklist__input{
+        display: none;
+      }
+    }
+
+    &__etiqueta{
+      color: var(--bg-color);
+      font-size: 1.4rem;
+    }
+
+  }
+  &__resultado{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--bg-color);
+    border-radius: 5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+    &__titulo{
+      margin: 0;
+      color: var(--bg-color);
+    }
+
+    &__galeria{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
+
+      .respuesta{
+        grid-column: 1 / span 3;
+        text-align: center;
+        color: var(--text-color);
+      }
+    }
+
+    .card{
+      min-height: 18rem;
+      font-size: 13px;
+
+      &__imagen__titulo{
+        font-size: 1.4em;
+      }
+    }    
+  }
+}
+
+.paginacion{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: var(--bg-color);
+
+  &__button{
+    &--disabled{
+      color: var(--inactive);
+    }
+    &--active{
+      color: var(--bg-color);
+      &:hover{
+        text-shadow: 0px 0px 5px var(--bg-color);
+      }
+    }
+  }
+}

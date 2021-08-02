@@ -1,0 +1,156 @@
+.comentarios{
+  background-color: var(--text-color);
+  border-bottom: 1px solid var(--inactive);
+  padding: 1.5rem 0;
+
+  &__titulo{
+    margin: 0 10rem;
+    padding-bottom: 1rem;
+    color: white;
+    font-size: 1.55rem;
+
+    &__mas{
+      margin-left: 0.75rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__formulario{
+    margin: 0 10rem;
+    display: flex;
+    
+
+    &__avatar{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        box-sizing: border-box;
+        border-radius: 50%;
+        font-size: 27px;
+        color: var(--inactive);
+        background-color: rgba(255, 255, 255, 0.85);
+      }
+
+      &__imagen{
+        object-fit: cover;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+    }
+
+    &__input{
+      flex: 1;
+      outline: none;
+      padding: 0 0.25rem;
+      margin-left: 1.5rem;
+      border: 1px solid white;
+      color: var(--text-color);
+    }
+
+    &__button{
+      outline: none;
+      box-sizing: border-box;
+      background-color: var(--bg-color);
+      border: 1px solid white;
+      color: white;
+      padding: 0.5rem 1.25rem;
+      font-size: 1.5rem;
+
+      &:hover{
+        background-color: rgb(37, 96, 135);
+      }
+    }
+  }
+
+  &__item{
+    margin: 0 10rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    display: flex;
+
+    &__avatar{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__imagen{
+        object-fit: cover;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+    }
+
+    &__datos{
+      margin-left: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: white;
+
+      &__nombre{
+        font-weight: bold;
+
+        &__button{
+          color: rgba(255, 255, 255, 0.75);
+          background-color: transparent;
+          font-style: oblique;
+          border: none;
+          outline: none;
+
+          &:hover{
+            color: white;
+            text-decoration-line: underline;
+          }
+        }
+      }
+
+      &__fecha{
+        font-size: 0.8em;
+      }
+
+      &__descripcion{
+        margin: 0 10rem;
+        padding-left: 4.5rem;
+        color: white;
+      }
+    }
+  }
+
+  &__button{
+    display: block;
+    margin: auto;
+    margin-top: 1.25rem;
+    color: white;
+    background-color: transparent;
+    font-style: oblique;
+    font-weight: bold;
+    border: none;
+    outline: none;
+
+    &:hover{
+      color: white;
+      text-decoration-line: underline;
+    }
+  }
+
+  &__vacio{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin: 0 10rem;
+    margin-top: 1.25rem;
+    text-align: center;
+  }
+}

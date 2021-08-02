@@ -1,0 +1,76 @@
+.recomendados{
+  margin: 1.5rem 10rem;
+  margin-top: 0;
+  position: relative;
+
+  &__titulo{
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin: 1.5rem 10rem;
+    margin-bottom: 0;
+  }
+
+  &__galeria{    
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0.5rem 0;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+    .card{
+      min-width: 300px;
+      height: 26rem;
+    }
+  }
+
+  &__button{
+    &--derecha{
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 20;
+      background-image: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+      width: 5rem;
+      height: 100%;
+      
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      
+      &:hover{
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0.7),  rgba(255, 255, 255, 0.4), transparent);
+        color: var(--bg-color);
+      }
+    }
+
+    &--izquierda{
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+      width: 5rem;
+      height: 100%;
+      
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      
+      &:hover{
+        color: var(--bg-color);
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7),  rgba(255, 255, 255, 0.4), transparent);
+      }
+    }
+  }
+}

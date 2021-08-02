@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pagina principal{% endblock %}
+{% block content %}
+<div class="carousel">
+  <div class="slide fade">
+    <img class="slide__fondo" src="{% static 'img/natural.jpg' %}" alt="natural.jpg">
+    <h2 class="slide__titulo">Sitios naturales</h2>
+    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <div class="slide__indicador">
+      <span class="dot" onclick="showSlides(1)"></span>
+      <span class="dot" onclick="showSlides(2)"></span>
+      <span class="dot" onclick="showSlides(3)"></span>
+      <span class="dot" onclick="showSlides(4)"></span>
+      <span class="dot" onclick="showSlides(5)"></span>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img class="slide__fondo" src="{% static 'img/cultural.png' %}" alt="cultural.png">
+    <h2 class="slide__titulo">Sitios culturales</h2>
+    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <div class="slide__indicador">
+      <span class="dot" onclick="showSlides(1)"></span>
+      <span class="dot" onclick="showSlides(2)"></span>
+      <span class="dot" onclick="showSlides(3)"></span>
+      <span class="dot" onclick="showSlides(4)"></span>
+      <span class="dot" onclick="showSlides(5)"></span>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img class="slide__fondo" src="{% static 'img/folclore.jpg' %}" alt="folclore.jpg">
+    <h2 class="slide__titulo">Folclore</h2>
+    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <div class="slide__indicador">
+      <span class="dot" onclick="showSlides(1)"></span>
+      <span class="dot" onclick="showSlides(2)"></span>
+      <span class="dot" onclick="showSlides(3)"></span>
+      <span class="dot" onclick="showSlides(4)"></span>
+      <span class="dot" onclick="showSlides(5)"></span>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img class="slide__fondo" src="{% static 'img/realizaciones.jpg' %}" alt="realizaciones.jpg">
+    <h2 class="slide__titulo">Realizaciones contemporaneas</h2>
+    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <div class="slide__indicador">
+      <span class="dot" onclick="showSlides(1)"></span>
+      <span class="dot" onclick="showSlides(2)"></span>
+      <span class="dot" onclick="showSlides(3)"></span>
+      <span class="dot" onclick="showSlides(4)"></span>
+      <span class="dot" onclick="showSlides(5)"></span>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img class="slide__fondo" src="{% static 'img/eventos.jpg' %}" alt="eventos.jpg">
+    <h2 class="slide__titulo">Eventos y acontecimientos</h2>
+    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <div class="slide__indicador">
+      <span class="dot" onclick="showSlides(1)"></span>
+      <span class="dot" onclick="showSlides(2)"></span>
+      <span class="dot" onclick="showSlides(3)"></span>
+      <span class="dot" onclick="showSlides(4)"></span>
+      <span class="dot" onclick="showSlides(5)"></span>
+    </div>
+  </div>
+</div>
+
+<p class="titulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<p class="subtitulo">Quisque nec leo et eros venenatis.Curabitur ac mauris in leo fermentum</p>
+
+<div class="seccion">
+  <div class="seccion__img">
+    <img class="seccion__img__imagen" src="{% static 'img/natural.jpg' %}" alt="natural.jpg">
+  </div>
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Sitios naturales</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+  </div>
+</div>
+<div class="seccion">
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Sitios culturales</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+  </div>
+  <div class="seccion__img">
+    <img class="seccion__img__imagen" src="{% static 'img/cultural.png' %}" alt="cultural.png">
+  </div>
+</div>
+<div class="seccion">
+  <div class="seccion__img">
+    <img class="seccion__img__imagen" src="{% static 'img/folclore.jpg' %}" alt="folclore.jpg">
+  </div>
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Folclore</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <a class="seccion__descripcion__button" href=".">Explorar</a>
+  </div>
+</div>
+<div class="seccion">
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Realizaciones contemporaneas</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+  </div>
+  <div class="seccion__img">
+    <img class="seccion__img__imagen" src="{% static 'img/realizaciones.jpg' %}" alt="realizaciones.jpg">
+  </div>
+</div>
+<div class="seccion">
+  <div class="seccion__img">
+    <img class="seccion__img__imagen" src="{% static 'img/eventos.jpg' %}" alt="eventos.jpg">
+  </div>
+  <div class="seccion__descripcion">
+    <h3 class="seccion__descripcion__titulo">Eventos y acontecimientos</h3>
+    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <a class="seccion__descripcion__button" href=".">Explorar</a>
+  </div>
+</div>
+
+<div class="separador">
+  <div class="compartir">
+    <h3 class="compartir__titulo">Comparte tu experiencia en viajes</h3>
+    <p class="compartir__descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur ipsum uisque nec leo et eros venenatis Curabitur ac mauris in leo fermentum </p>
+  </div>
+</div>
+
+<h4 class="recomendados__titulo">Recomendados para ti</h4>
+<div class="recomendados">
+  <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
+  <div class="recomendados__galeria">
+    {% for card in recomendados %}
+      <div class="card">
+        <div class="card__imagen">
+          <img class="card__imagen__img" src="{{ card.image }}" alt="{{ card.nombre }}">
+          <h5 class="card__imagen__titulo">{{ card.nombre }}</h5>
+          <p class="card__imagen__lugar">{{ card.provincia }}</p>
+        </div>
+        <div class="card__descripcion">
+          <div class="etiqueta">
+            <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
+            <span class="etiqueta__clase">{{ card.categoria }}</span>
+          </div>
+            <div class="corazon {% if card.corazon.marcado %} corazon--active {% else %} corazon--desactive {% endif %}">
+            <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
+            <span class="corazon__numero">{{ card.corazon.contador }}</span>
+          </div>
+          <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    // Variables globales para el control del slide automatico
+    let slides = document.getElementsByClassName('slide');
+    let numSlide = slides.length;
+    let slideAutomatico;
+    let n = 1;
+
+    // Muestra un slide y oculta los otros, donde slideIndex es la indice que le correponde al slide que se desea mostrar
+    function showSlides(slideIndex) {
+      let i;
+      let dots = document.getElementsByClassName("dot");
+  
+      for (i = 0; i < slides.length; i++)
+        slides[i].style.display = "none";  
+      slides[slideIndex - 1].style.display = "flex";
+
+      for (i = 0; i < dots.length; i++) {
+        if(i % slides.length == slideIndex - 1){
+          dots[i].className = dots[i].className + " dot--active";
+        }
+        else{
+          dots[i].className = dots[i].className.replace(" dot--active", "");
+        }
+      }
+      n = slideIndex;
+      clearInterval(slideAutomatico);
+      slideAutomatico = setInterval(cambiarSlide, 5000);
+    }
+
+    // Muestra el siguiente slide
+    function cambiarSlide(){
+      n += 1;
+      if(n == numSlide + 1)
+        n = 1;
+      showSlides(n);
+    }
+
+    // Muestra el slide de la posicion 1, si el numero de slides es mayor que 1
+    (numSlide > 0) && showSlides(n);
+
+    activarRecomendaciones();
+  </script>
+{% endblock %}

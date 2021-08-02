@@ -1,0 +1,53 @@
+.seccion{
+  margin: 2em 10rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: auto auto;
+  align-items: center;
+
+  &__img{
+    &__imagen{
+      width: 27rem;
+      height: 17rem;
+      object-fit: cover;
+    }
+  }
+
+  &__descripcion{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__titulo{
+      align-self: flex-start;
+      font-size: 2.25rem;
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    &__informacion{
+      align-self: flex-start;
+      font-size: 1.25rem;
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    &__button{
+      align-self: flex-end;
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+      background-color: var(--bg-color);
+
+      &:hover{
+        background-color: hsla(204, 64%, 55%, 1);
+        box-shadow: 1px 1px 1px 1px hsla(204, 90%, 44%, 0.5);
+      }
+    }
+  }
+}

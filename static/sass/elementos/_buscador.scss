@@ -1,0 +1,46 @@
+.buscador{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__icon{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    margin: 1em;
+    color: white;
+  }
+  
+  &__input{
+    width: 12em;
+    height: 2.25em;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    transition: all .55s ease;
+    padding: 0 3em 0 1em;
+
+    &::placeholder{
+      color: white;  
+    }
+    
+    &:focus, &:active{
+      outline: none;
+      color: var(--text-color);  
+      background-color: white;
+
+      &::placeholder{
+        color: var(--text-color);  
+      }
+
+      & ~ .buscador__icon{
+        color: var(--text-color);
+      }
+    }
+  }
+}
