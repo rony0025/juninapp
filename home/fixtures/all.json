@@ -1,0 +1,4964 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$260000$WT3X7yfeV6KNDxm9YS5V0q$E9MzW3vyVaBwJBydpf5lQsZAMi2w4wgJqoHDjHwgYEs=",
+    "last_login": "2021-08-01T22:20:19.893Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-08-01T20:07:37.445Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!ql8qTLJdo1yN0UlJPwt5BSheVYz6NDB6JzKIDFZn",
+    "last_login": "2021-08-01T22:21:36.996Z",
+    "is_superuser": false,
+    "username": "hubert_alexander",
+    "first_name": "HUBERT ALEXANDER",
+    "last_name": "HUAMANI DELGADO",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-01T22:21:31.993Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9dd5wld4xklkwid7h2qdiyxyb9qoh85n",
+  "fields": {
+    "session_data": "eyJfbGFuZ3VhZ2UiOiJlbi11cyJ9:1mAHmg:86E5K2lPL5N8Weida2mxCoUl5mn0v3sKKF_cA8h8vLw",
+    "expire_date": "2021-08-15T20:10:06.989Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xa7vjipuwnx8zj6deweueo91ms53j3uw",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSHzWTAp0_sMaGGX4CSyJWNXUe4eIblI2jcz7y0iHnuNR-MtziSuQonL75YwP3npgB643FeZ12Xf5iS7Ik_a5LQSv26n-3dQsdVeg7UwFGVAjYFSQK2D5eJDwqS1SWiNgwCeihoUjFo5n8kaYscFGaz4fAHHHDd2:1mAHkg:cv9NABCxI0vJbd76qj87HUOXqR75Yrx4LjoTRal-c0I",
+    "expire_date": "2021-08-15T20:08:02.581Z"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 1,
+  "fields": {
+    "nombre": "Huancayo"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 2,
+  "fields": {
+    "nombre": "Concepción"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 3,
+  "fields": {
+    "nombre": "Chupaca"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 4,
+  "fields": {
+    "nombre": "Jauja"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 5,
+  "fields": {
+    "nombre": "Junín"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 6,
+  "fields": {
+    "nombre": "Tarma"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 7,
+  "fields": {
+    "nombre": "Yauli"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 8,
+  "fields": {
+    "nombre": "Chanchamayo"
+  }
+},
+{
+  "model": "home.provincia",
+  "pk": 9,
+  "fields": {
+    "nombre": "Satipo"
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 1,
+  "fields": {
+    "nombre": "Chilca",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 2,
+  "fields": {
+    "nombre": "Chongos Alto",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 3,
+  "fields": {
+    "nombre": "El Tambo",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 4,
+  "fields": {
+    "nombre": "Hualhuas",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 5,
+  "fields": {
+    "nombre": "Huancán",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 6,
+  "fields": {
+    "nombre": "Huancayo",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 7,
+  "fields": {
+    "nombre": "Huayucachi",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 8,
+  "fields": {
+    "nombre": "San Jerónimo de Tunán",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 9,
+  "fields": {
+    "nombre": "Pucara",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 10,
+  "fields": {
+    "nombre": "Pucará",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 11,
+  "fields": {
+    "nombre": "Sapallanga",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 12,
+  "fields": {
+    "nombre": "Sicaya",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 13,
+  "fields": {
+    "nombre": "Viques",
+    "provincia_id": 1
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 14,
+  "fields": {
+    "nombre": "Chambara",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 15,
+  "fields": {
+    "nombre": "Aco",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 16,
+  "fields": {
+    "nombre": "Concepción",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 17,
+  "fields": {
+    "nombre": "Ingenio",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 18,
+  "fields": {
+    "nombre": "Comas",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 19,
+  "fields": {
+    "nombre": "Mariscal Castilla",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 20,
+  "fields": {
+    "nombre": "Manzanares",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 21,
+  "fields": {
+    "nombre": "Mito",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 22,
+  "fields": {
+    "nombre": "Nueve de Julio",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 23,
+  "fields": {
+    "nombre": "Orcotuna",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 24,
+  "fields": {
+    "nombre": "Santa Rosa de Ocopa",
+    "provincia_id": 2
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 25,
+  "fields": {
+    "nombre": "Ahuac",
+    "provincia_id": 3
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 26,
+  "fields": {
+    "nombre": "Chongos Bajo",
+    "provincia_id": 3
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 27,
+  "fields": {
+    "nombre": "Chupaca",
+    "provincia_id": 3
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 28,
+  "fields": {
+    "nombre": "Acolla",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 29,
+  "fields": {
+    "nombre": "Apata",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 30,
+  "fields": {
+    "nombre": "Curicaca",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 31,
+  "fields": {
+    "nombre": "Canchayllo",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 32,
+  "fields": {
+    "nombre": "Jauja",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 33,
+  "fields": {
+    "nombre": "Llocllapampa",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 34,
+  "fields": {
+    "nombre": "Marco",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 35,
+  "fields": {
+    "nombre": "Pancan",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 36,
+  "fields": {
+    "nombre": "Paca",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 37,
+  "fields": {
+    "nombre": "Monobamba",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 38,
+  "fields": {
+    "nombre": "Tunanmarca",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 39,
+  "fields": {
+    "nombre": "Yauyos",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 40,
+  "fields": {
+    "nombre": "Parco",
+    "provincia_id": 4
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 41,
+  "fields": {
+    "nombre": "Junín",
+    "provincia_id": 5
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 42,
+  "fields": {
+    "nombre": "Ondores",
+    "provincia_id": 5
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 43,
+  "fields": {
+    "nombre": "Acobamba",
+    "provincia_id": 6
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 44,
+  "fields": {
+    "nombre": "Palcamayo",
+    "provincia_id": 6
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 45,
+  "fields": {
+    "nombre": "San Pedro Cajas",
+    "provincia_id": 6
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 46,
+  "fields": {
+    "nombre": "Tarma",
+    "provincia_id": 6
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 47,
+  "fields": {
+    "nombre": "Morococha",
+    "provincia_id": 7
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 48,
+  "fields": {
+    "nombre": "Yauli",
+    "provincia_id": 7
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 49,
+  "fields": {
+    "nombre": "Chanchamayo",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 50,
+  "fields": {
+    "nombre": "Pichanaki",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 51,
+  "fields": {
+    "nombre": "Perené",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 52,
+  "fields": {
+    "nombre": "San Luis nde Shuaro",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 53,
+  "fields": {
+    "nombre": "San Ramón",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 54,
+  "fields": {
+    "nombre": "Vitoc",
+    "provincia_id": 8
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 55,
+  "fields": {
+    "nombre": "Río Negro",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 56,
+  "fields": {
+    "nombre": "Pampa Hermosa",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 57,
+  "fields": {
+    "nombre": "Río Tambo",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 58,
+  "fields": {
+    "nombre": "San Martín de Pangoa",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 59,
+  "fields": {
+    "nombre": "Satipo",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.distrito",
+  "pk": 60,
+  "fields": {
+    "nombre": "Rio Tambo",
+    "provincia_id": 9
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 1,
+  "fields": {
+    "language_code": "es",
+    "nombre": "Sitios Naturales",
+    "master": 1
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 2,
+  "fields": {
+    "language_code": "es",
+    "nombre": "Cultural sites",
+    "master": 2
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 3,
+  "fields": {
+    "language_code": "es",
+    "nombre": "Acontecimientos y Eventos",
+    "master": 3
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 4,
+  "fields": {
+    "language_code": "es",
+    "nombre": "Realizaciones Contemporaneas",
+    "master": 4
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 5,
+  "fields": {
+    "language_code": "es",
+    "nombre": "Folclore",
+    "master": 5
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 6,
+  "fields": {
+    "language_code": "en-us",
+    "nombre": "Folclore",
+    "master": 5
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 7,
+  "fields": {
+    "language_code": "en-us",
+    "nombre": "Contemporary Achievements",
+    "master": 4
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 8,
+  "fields": {
+    "language_code": "en-us",
+    "nombre": "Events and Events",
+    "master": 3
+  }
+},
+{
+  "model": "home.categoriatranslation",
+  "pk": 9,
+  "fields": {
+    "language_code": "en-us",
+    "nombre": "Natural Sites",
+    "master": 1
+  }
+},
+{
+  "model": "home.categoria",
+  "pk": 1,
+  "fields": {
+    "tipo": true
+  }
+},
+{
+  "model": "home.categoria",
+  "pk": 2,
+  "fields": {
+    "tipo": true
+  }
+},
+{
+  "model": "home.categoria",
+  "pk": 3,
+  "fields": {
+    "tipo": false
+  }
+},
+{
+  "model": "home.categoria",
+  "pk": 4,
+  "fields": {
+    "tipo": true
+  }
+},
+{
+  "model": "home.categoria",
+  "pk": 5,
+  "fields": {
+    "tipo": false
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 1,
+  "fields": {
+    "nombre": "Bosque De Ocopilla",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 1,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 2,
+  "fields": {
+    "nombre": "Estación Ferroviaria De Chilca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 1,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 3,
+  "fields": {
+    "nombre": "Feria Ganadera De Cuasimodo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 1,
+    "categoria_id": 3
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 4,
+  "fields": {
+    "nombre": "Chongos Alto",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 2,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 5,
+  "fields": {
+    "nombre": "Cochas Chico",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 3,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 6,
+  "fields": {
+    "nombre": "Cochas Grande",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 3,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 7,
+  "fields": {
+    "nombre": "Complejo Recreacional Bosque Dorado",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 3,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 8,
+  "fields": {
+    "nombre": "Cruz De La Paz De Achkamarka",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 3,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 9,
+  "fields": {
+    "nombre": "Museo Salesiano",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 3,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 10,
+  "fields": {
+    "nombre": "Pueblo De Hualhuas",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 4,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 11,
+  "fields": {
+    "nombre": "Museo De Sitio De Wariwilka",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 5,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 12,
+  "fields": {
+    "nombre": "Santuario De Wariwilka",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 5,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 13,
+  "fields": {
+    "nombre": "Calle Real - Capaq",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 14,
+  "fields": {
+    "nombre": "Capilla De La Merced",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 15,
+  "fields": {
+    "nombre": "Capilla Del Cerrito De La Libertad",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 16,
+  "fields": {
+    "nombre": "Feria La Casa Del Artesano",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 17,
+  "fields": {
+    "nombre": "Catedral De Huancayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 18,
+  "fields": {
+    "nombre": "Cerrito De La Libertad",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 19,
+  "fields": {
+    "nombre": "Feria Dominical De Huancayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 20,
+  "fields": {
+    "nombre": "Formaciones Geologicas De Torre Torre",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 21,
+  "fields": {
+    "nombre": "Nevado De Huaytapallana",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 22,
+  "fields": {
+    "nombre": "Parque De La Identidad Wanka",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 23,
+  "fields": {
+    "nombre": "Plaza De La Constitucion",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 24,
+  "fields": {
+    "nombre": "Plaza De Huamanmarca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 6,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 25,
+  "fields": {
+    "nombre": "Fiesta Del Tayta Nino (chinchilpos Y Gamonales)",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 7,
+    "categoria_id": 3
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 26,
+  "fields": {
+    "nombre": "Plaza Principal De Huayucachi",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 7,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 27,
+  "fields": {
+    "nombre": "Iglesia Matriz De San Jeronimo De Tunan",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 8,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 28,
+  "fields": {
+    "nombre": "Pueblo De San Jeronimo De Tunan",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 8,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 29,
+  "fields": {
+    "nombre": "Mirador De Pucara",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 9,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 30,
+  "fields": {
+    "nombre": "Pueblo De Pucara",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 10,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 31,
+  "fields": {
+    "nombre": "Piscigranja La Cabaña",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 11,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 32,
+  "fields": {
+    "nombre": "Iglesia Matriz De Santo Domingo De Guzman",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 12,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 33,
+  "fields": {
+    "nombre": "Pueblo De Sicaya",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 12,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 34,
+  "fields": {
+    "nombre": "Cecosan - Mayopampa De Viques",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 13,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 35,
+  "fields": {
+    "nombre": "Huaylarsh Antiguo De Viques",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 13,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 36,
+  "fields": {
+    "nombre": "Huaylarsh Moderno De Viques",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 13,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 37,
+  "fields": {
+    "nombre": "Pueblo De Viques",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 13,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 38,
+  "fields": {
+    "nombre": "Tejidos De Las Fajas De Viques",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 13,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 39,
+  "fields": {
+    "nombre": "El Auquish Negro De Chambara",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 14,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 40,
+  "fields": {
+    "nombre": "Pueblo De Aco",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 15,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 41,
+  "fields": {
+    "nombre": "Restos Arqueologicos De Coto Coto",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 15,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 42,
+  "fields": {
+    "nombre": "Casa Ugarte Leon",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 43,
+  "fields": {
+    "nombre": "Iglesia De Alayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 44,
+  "fields": {
+    "nombre": "Danza Los Pastorcitos De Concepcion O Tana Tana",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 45,
+  "fields": {
+    "nombre": "Iglesia Matriz De Concepcion",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 46,
+  "fields": {
+    "nombre": "Paseo De Los Heroes",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 47,
+  "fields": {
+    "nombre": "Plaza De Armas De Concepcion",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 48,
+  "fields": {
+    "nombre": "Mirador Estatua De La Virgen De La Inmaculada Concepcion En Piedra Parada",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 49,
+  "fields": {
+    "nombre": "Planta Lechera 'mantaro' De La Universidad Peruana Los Andes",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 50,
+  "fields": {
+    "nombre": "Pueblo Historico De Concepcion",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 51,
+  "fields": {
+    "nombre": "Puente Las Balsas 'heroínas Toledo'",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 16,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 52,
+  "fields": {
+    "nombre": "Centro Piscicola El Ingenio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 17,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 53,
+  "fields": {
+    "nombre": "Laguna De Pomacocha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 18,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 54,
+  "fields": {
+    "nombre": "Costumbre La Herranza",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 19,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 55,
+  "fields": {
+    "nombre": "Danza El Auquish Negro Y Blanco De Manzanares",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 20,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 56,
+  "fields": {
+    "nombre": "Danza La Huaconada",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 21,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 57,
+  "fields": {
+    "nombre": "Formaciones Geologicas De Wawi Wawi",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 21,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 58,
+  "fields": {
+    "nombre": "Iglesia Matriz De Mito",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 21,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 59,
+  "fields": {
+    "nombre": "Pueblo Tradicional De Mito",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 21,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 60,
+  "fields": {
+    "nombre": "Danza Los Negritos Decentes De Nueve De Julio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 22,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 61,
+  "fields": {
+    "nombre": "Pueblo Tradicional De Orcotuna",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 23,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 62,
+  "fields": {
+    "nombre": "Parque Recreacional La Huaycha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 23,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 63,
+  "fields": {
+    "nombre": "Santuario De La Virgen De Cocharcas",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 23,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 64,
+  "fields": {
+    "nombre": "Convento De Santa Rosa De Ocopa",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 24,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 65,
+  "fields": {
+    "nombre": "Danza Del Chuncho De Santa Rosa De Ocopa",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 24,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 66,
+  "fields": {
+    "nombre": "Iglesia Matriz De Santa Rosa De Ocopa",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 24,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 67,
+  "fields": {
+    "nombre": "Restos Arqueologicos De Ocupi",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 24,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 68,
+  "fields": {
+    "nombre": "Laguna De Awinpuquio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 25,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 69,
+  "fields": {
+    "nombre": "Plaza Principal De Ahuac",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 25,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 70,
+  "fields": {
+    "nombre": "Manantial Virgen De Cocharcas De Matapuquio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 25,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 71,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Arwaturo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 25,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 72,
+  "fields": {
+    "nombre": "Capilla El Copon",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 26,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 73,
+  "fields": {
+    "nombre": "Iglesia Matriz De Chongos Bajo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 26,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 74,
+  "fields": {
+    "nombre": "Santiago Leon De Chongos Bajo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 26,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 75,
+  "fields": {
+    "nombre": "Santuario De Cani Cruz",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 26,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 76,
+  "fields": {
+    "nombre": "Feria Sabatina De Chupaca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 77,
+  "fields": {
+    "nombre": "Fiesta De Las Cruces- Shapish",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 78,
+  "fields": {
+    "nombre": "Iglesia Matriz De San Juan Bautista De Chupaca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 79,
+  "fields": {
+    "nombre": "Laguna De Pucush Uclo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 80,
+  "fields": {
+    "nombre": "Mirador Los Shapis",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 81,
+  "fields": {
+    "nombre": "Plaza Independencia - Chupaca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 27,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 82,
+  "fields": {
+    "nombre": "Danza Chacranegro De Acolla",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 28,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 83,
+  "fields": {
+    "nombre": "Danza Huayligia De Acolla",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 28,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 84,
+  "fields": {
+    "nombre": "Danza Pachahuara De Acolla",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 28,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 85,
+  "fields": {
+    "nombre": "Estampa Mactada O Tropa De Caceres De Acolla",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 28,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 86,
+  "fields": {
+    "nombre": "Laguna De Tipicocha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 29,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 87,
+  "fields": {
+    "nombre": "Laguna Tranca Grande",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 29,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 88,
+  "fields": {
+    "nombre": "Banos Termales De Acaya",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 30,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 89,
+  "fields": {
+    "nombre": "Canon Del Shucto",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 90,
+  "fields": {
+    "nombre": "Centro Arqueologico De Cori Vinchos",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 91,
+  "fields": {
+    "nombre": "Festividad De La Cruz De Mayo De Canchayllo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 92,
+  "fields": {
+    "nombre": "Pinturas Rupestres De Helenapuquio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 93,
+  "fields": {
+    "nombre": "Reserva Paisajistica Nor Yauyos - Cochas",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 94,
+  "fields": {
+    "nombre": "Rodal De Puyas De Canchayllo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 95,
+  "fields": {
+    "nombre": "Capilla Cristo Pobre",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 32,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 96,
+  "fields": {
+    "nombre": "Iglesia Matriz De Jauja",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 32,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 97,
+  "fields": {
+    "nombre": "Pueblo Historico De Jauja",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 32,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 98,
+  "fields": {
+    "nombre": "Centro Arqueologico De Huajlasmarca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 33,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 99,
+  "fields": {
+    "nombre": "Danza Carnaval Marqueno",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 34,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 100,
+  "fields": {
+    "nombre": "Danza Los Segadores De Marco",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 34,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 101,
+  "fields": {
+    "nombre": "Humedal De Chocon",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 34,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 102,
+  "fields": {
+    "nombre": "Hatunmarca O Hatun Malca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 34,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 103,
+  "fields": {
+    "nombre": "Centro Arqueologico De Pueblo Viejo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 35,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 104,
+  "fields": {
+    "nombre": "Laguna De Paca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 36,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 105,
+  "fields": {
+    "nombre": "Pueblo De Monobamba",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 37,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 106,
+  "fields": {
+    "nombre": "Centro Arqueologico De Siquillapucara O Tunanmarca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 38,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 107,
+  "fields": {
+    "nombre": "Danza La Tunantada",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 39,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 108,
+  "fields": {
+    "nombre": "Lugar Paleontologico De Pucutanja",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 40,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 109,
+  "fields": {
+    "nombre": "Banos Termales De Huajal",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 33,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 110,
+  "fields": {
+    "nombre": "Banos Termales De Huiscapuquio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 33,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 111,
+  "fields": {
+    "nombre": "Cara Del Inca De Canchayllo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 112,
+  "fields": {
+    "nombre": "Piscigranja Pachacayo De La Sais Tupac Amaru",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 113,
+  "fields": {
+    "nombre": "Piscigranja Vinchos De La Sais Tipac Amaru.",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 114,
+  "fields": {
+    "nombre": "Sais Tipac Amaru De Pachacayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 115,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Coto Coto",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 31,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 116,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Umpamalca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 34,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 117,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Aupa - Casa Blanca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 33,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 118,
+  "fields": {
+    "nombre": "Aguas Termales De Huarmi Puquio",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 119,
+  "fields": {
+    "nombre": "Cuartel General De Simon Bolivar",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 120,
+  "fields": {
+    "nombre": "Iglesia Matriz San Ignacio De Loyola",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 121,
+  "fields": {
+    "nombre": "Monumento A Los Vencedores De Junin",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 122,
+  "fields": {
+    "nombre": "Plaza Simon Bolivar",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 123,
+  "fields": {
+    "nombre": "Santuario Historico De Chacamarca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 124,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Chacamarca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 41,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 125,
+  "fields": {
+    "nombre": "Iglesia De San Pedro De Pari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 42,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 126,
+  "fields": {
+    "nombre": "Lago De Junín",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 42,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 127,
+  "fields": {
+    "nombre": "Reserva Nacional De Junin",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 42,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 128,
+  "fields": {
+    "nombre": "Casa Hacienda La Florida",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 43,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 129,
+  "fields": {
+    "nombre": "Pueblo Tradicional Acobamba",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 43,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 130,
+  "fields": {
+    "nombre": "Santuario Del Senor De Muruhuay",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 43,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 131,
+  "fields": {
+    "nombre": "Gruta De Huagapo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 44,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 132,
+  "fields": {
+    "nombre": "Pueblo Artesanal De San Pedro De Cajas",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 45,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 133,
+  "fields": {
+    "nombre": "Sitio Arqueologico De Cachipozo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 45,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 134,
+  "fields": {
+    "nombre": "Andeneras De Vicora Anta",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 135,
+  "fields": {
+    "nombre": "Catedral De Santa Ana De Tarma",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 136,
+  "fields": {
+    "nombre": "Complejo Arqueologico De Tarmatambo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 137,
+  "fields": {
+    "nombre": "Casa Hacienda Santa Maria",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 138,
+  "fields": {
+    "nombre": "Mirador De Carhuacatac",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 139,
+  "fields": {
+    "nombre": "Plaza De Armas De Tarma",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 140,
+  "fields": {
+    "nombre": "Pueblo De Tarmatambo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 46,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 141,
+  "fields": {
+    "nombre": "Laguna Huascacocha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 47,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 142,
+  "fields": {
+    "nombre": "Laguna De Pomacocha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 47,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 143,
+  "fields": {
+    "nombre": "Banos Termales Medicinales De Yauli",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 48,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 144,
+  "fields": {
+    "nombre": "Comunidad Nativa De Pampa Michi",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 145,
+  "fields": {
+    "nombre": "Mirador Cruz De Chanchamayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 146,
+  "fields": {
+    "nombre": "Plaza Principal De La Ciudad De La Merced",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 147,
+  "fields": {
+    "nombre": "Puente Colgante Kimiri",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 148,
+  "fields": {
+    "nombre": "Puente Raither",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 149,
+  "fields": {
+    "nombre": "Cataratas De Zotarari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 50,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 150,
+  "fields": {
+    "nombre": "Curanderismo En La Casa Naturista Mala Hierba De Camacho",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 50,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 151,
+  "fields": {
+    "nombre": "La Laguna Encantada",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 50,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 152,
+  "fields": {
+    "nombre": "Playa De Pichanaki",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 50,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 153,
+  "fields": {
+    "nombre": "Canon De Yurinaqui",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 51,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 154,
+  "fields": {
+    "nombre": "Catarata De Bayoz",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 51,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 155,
+  "fields": {
+    "nombre": "Catarata Velo De La Novia De Bayoz",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 51,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 156,
+  "fields": {
+    "nombre": "Comunidad Nativa De Marankiari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 51,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 157,
+  "fields": {
+    "nombre": "Jardin Botanico El Perezozo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 52,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 158,
+  "fields": {
+    "nombre": "Casa Hacienda El Naranjal",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 53,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 159,
+  "fields": {
+    "nombre": "Catarata Del Tirol",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 53,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 160,
+  "fields": {
+    "nombre": "Catarata Velo De La Novia De San Ramon",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 53,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 161,
+  "fields": {
+    "nombre": "Orquideario Las Delicias",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 53,
+    "categoria_id": 4
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 162,
+  "fields": {
+    "nombre": "Catarata De Tunquimayo",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 54,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 163,
+  "fields": {
+    "nombre": "Vitoc Y La Nativa Dormida",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 54,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 164,
+  "fields": {
+    "nombre": "Bosques De Proteccion Pui Pui",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 54,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 165,
+  "fields": {
+    "nombre": "Catarata Shimayacu",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 54,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 166,
+  "fields": {
+    "nombre": "Santuario Nacional De Pampa Hermosa",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 49,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 167,
+  "fields": {
+    "nombre": "Catarata De Tsomontonari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 55,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 168,
+  "fields": {
+    "nombre": "Catarata Gallito De Las Rocas",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 56,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 169,
+  "fields": {
+    "nombre": "Catarata De Koari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 57,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 170,
+  "fields": {
+    "nombre": "Catarata De Meretari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 57,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 171,
+  "fields": {
+    "nombre": "Comunidad Nativa De Poyeni",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 57,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 172,
+  "fields": {
+    "nombre": "Comunidad Nativa De Betania",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 57,
+    "categoria_id": 5
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 173,
+  "fields": {
+    "nombre": "Rio Samaireni 'piscina Natural De Betania'",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 57,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 174,
+  "fields": {
+    "nombre": "Catarata Imperitaja",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 58,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 175,
+  "fields": {
+    "nombre": "Cataratas De La Resistencia",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 176,
+  "fields": {
+    "nombre": "Iglesia San Francisco De Asis",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 177,
+  "fields": {
+    "nombre": "Mirador Cerro Satelite",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 178,
+  "fields": {
+    "nombre": "Museo Callegari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 179,
+  "fields": {
+    "nombre": "Petroglifos De Huanacaure",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 180,
+  "fields": {
+    "nombre": "Petroglifos De Paratushiali",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 2
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 181,
+  "fields": {
+    "nombre": "Catarata Tigre Paccha",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 56,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 182,
+  "fields": {
+    "nombre": "Laguna De Tuctuca",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 59,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 183,
+  "fields": {
+    "nombre": "Tobogan De Piedra De Meretari",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 60,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 184,
+  "fields": {
+    "nombre": "Catarata De Cristal",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 56,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.recurso",
+  "pk": 185,
+  "fields": {
+    "nombre": "Catarata De Los Monos",
+    "image_URL": "imagen",
+    "subtitulo": "subtitulo",
+    "descripcion": "descripcion",
+    "puntuacion": 0,
+    "distrito_id": 56,
+    "categoria_id": 1
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 1,
+  "fields": {
+    "recurso_id": 1,
+    "latitud": -12.066170348999947,
+    "longitud": -75.17897206199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 2,
+  "fields": {
+    "recurso_id": 2,
+    "latitud": -12.081271940999954,
+    "longitud": -75.20613529199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 3,
+  "fields": {
+    "recurso_id": 3,
+    "latitud": -12.091225624999936,
+    "longitud": -75.21009428099995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 4,
+  "fields": {
+    "recurso_id": 4,
+    "latitud": -12.31119246399993,
+    "longitud": -75.28924048999994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 5,
+  "fields": {
+    "recurso_id": 5,
+    "latitud": -12.014277146999973,
+    "longitud": -75.19636474199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 6,
+  "fields": {
+    "recurso_id": 6,
+    "latitud": -12.002538842999968,
+    "longitud": -75.19644810199998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 7,
+  "fields": {
+    "recurso_id": 7,
+    "latitud": -11.987914486999955,
+    "longitud": -75.19825629099995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 8,
+  "fields": {
+    "recurso_id": 8,
+    "latitud": -12.014231043999928,
+    "longitud": -75.19762327499996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 9,
+  "fields": {
+    "recurso_id": 9,
+    "latitud": -12.06617181699994,
+    "longitud": -75.21522942799999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 10,
+  "fields": {
+    "recurso_id": 10,
+    "latitud": -11.975141650999944,
+    "longitud": -75.25827277099995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 11,
+  "fields": {
+    "recurso_id": 11,
+    "latitud": -12.116911811999955,
+    "longitud": -75.20566633799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 12,
+  "fields": {
+    "recurso_id": 12,
+    "latitud": -12.116911811999955,
+    "longitud": -75.20566633799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 13,
+  "fields": {
+    "recurso_id": 13,
+    "latitud": -12.070838822999974,
+    "longitud": -75.21436024199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 14,
+  "fields": {
+    "recurso_id": 14,
+    "latitud": -12.067152226999951,
+    "longitud": -75.21034197699998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 15,
+  "fields": {
+    "recurso_id": 15,
+    "latitud": -12.062622861999955,
+    "longitud": -75.19613339399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 16,
+  "fields": {
+    "recurso_id": 16,
+    "latitud": -12.067152226999951,
+    "longitud": -75.21034197699998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 17,
+  "fields": {
+    "recurso_id": 17,
+    "latitud": -12.067152226999951,
+    "longitud": -75.21034197699998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 18,
+  "fields": {
+    "recurso_id": 18,
+    "latitud": -12.062622861999955,
+    "longitud": -75.19613339399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 19,
+  "fields": {
+    "recurso_id": 19,
+    "latitud": -12.071340225999961,
+    "longitud": -75.22078343699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 20,
+  "fields": {
+    "recurso_id": 20,
+    "latitud": -12.059919589999936,
+    "longitud": -75.18180706299995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 21,
+  "fields": {
+    "recurso_id": 21,
+    "latitud": -11.955904535999935,
+    "longitud": -75.04196487799999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 22,
+  "fields": {
+    "recurso_id": 22,
+    "latitud": -12.048677104999967,
+    "longitud": -75.19752899599996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 23,
+  "fields": {
+    "recurso_id": 23,
+    "latitud": -12.067152226999951,
+    "longitud": -75.21034197699998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 24,
+  "fields": {
+    "recurso_id": 24,
+    "latitud": -12.070838822999974,
+    "longitud": -75.21436024199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 25,
+  "fields": {
+    "recurso_id": 25,
+    "latitud": -12.138294275999954,
+    "longitud": -75.22355890999995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 26,
+  "fields": {
+    "recurso_id": 26,
+    "latitud": -12.138294275999954,
+    "longitud": -75.22355890999995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 27,
+  "fields": {
+    "recurso_id": 27,
+    "latitud": -11.94900144199994,
+    "longitud": -75.28227427999997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 28,
+  "fields": {
+    "recurso_id": 28,
+    "latitud": -12.014513532999956,
+    "longitud": -75.27984359699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 29,
+  "fields": {
+    "recurso_id": 29,
+    "latitud": -12.172836939999968,
+    "longitud": -75.14614481599995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 30,
+  "fields": {
+    "recurso_id": 30,
+    "latitud": -12.172836939999968,
+    "longitud": -75.14614481599995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 31,
+  "fields": {
+    "recurso_id": 31,
+    "latitud": -12.110986713999978,
+    "longitud": -75.13483503999998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 32,
+  "fields": {
+    "recurso_id": 32,
+    "latitud": -12.014513532999956,
+    "longitud": -75.27984359699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 33,
+  "fields": {
+    "recurso_id": 33,
+    "latitud": -12.014513532999956,
+    "longitud": -75.27984359699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 34,
+  "fields": {
+    "recurso_id": 34,
+    "latitud": -12.173409211999967,
+    "longitud": -75.22343197199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 35,
+  "fields": {
+    "recurso_id": 35,
+    "latitud": -12.17362979099994,
+    "longitud": -75.21901077999996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 36,
+  "fields": {
+    "recurso_id": 36,
+    "latitud": -12.17362979099994,
+    "longitud": -75.21901077999996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 37,
+  "fields": {
+    "recurso_id": 37,
+    "latitud": -12.181089138999937,
+    "longitud": -75.22064393199997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 38,
+  "fields": {
+    "recurso_id": 38,
+    "latitud": -12.17362979099994,
+    "longitud": -75.21901077999996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 39,
+  "fields": {
+    "recurso_id": 39,
+    "latitud": -12.025571612999954,
+    "longitud": -75.42473231599996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 40,
+  "fields": {
+    "recurso_id": 40,
+    "latitud": -11.95762039799996,
+    "longitud": -75.36766342499999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 41,
+  "fields": {
+    "recurso_id": 41,
+    "latitud": -11.946484274999932,
+    "longitud": -75.37742038499994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 42,
+  "fields": {
+    "recurso_id": 42,
+    "latitud": -11.918040933999976,
+    "longitud": -75.31287776799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 43,
+  "fields": {
+    "recurso_id": 43,
+    "latitud": -11.909062974999927,
+    "longitud": -75.31911192599995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 44,
+  "fields": {
+    "recurso_id": 44,
+    "latitud": -11.918040933999976,
+    "longitud": -75.31287776799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 45,
+  "fields": {
+    "recurso_id": 45,
+    "latitud": -11.918040933999976,
+    "longitud": -75.31287776799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 46,
+  "fields": {
+    "recurso_id": 46,
+    "latitud": -11.918159036999953,
+    "longitud": -75.31239118899998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 47,
+  "fields": {
+    "recurso_id": 47,
+    "latitud": -11.918040933999976,
+    "longitud": -75.31287776799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 48,
+  "fields": {
+    "recurso_id": 48,
+    "latitud": -11.911792386999934,
+    "longitud": -75.31253084099995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 49,
+  "fields": {
+    "recurso_id": 49,
+    "latitud": -11.911864950999927,
+    "longitud": -75.32039164499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 50,
+  "fields": {
+    "recurso_id": 50,
+    "latitud": -11.918040933999976,
+    "longitud": -75.31287776799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 51,
+  "fields": {
+    "recurso_id": 51,
+    "latitud": -11.937990274999947,
+    "longitud": -75.31305676199997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 52,
+  "fields": {
+    "recurso_id": 52,
+    "latitud": -11.881669784999929,
+    "longitud": -75.25807416099997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 53,
+  "fields": {
+    "recurso_id": 53,
+    "latitud": -11.78255910699994,
+    "longitud": -75.25239135799995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 54,
+  "fields": {
+    "recurso_id": 54,
+    "latitud": -11.587748107999971,
+    "longitud": -75.15695938699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 55,
+  "fields": {
+    "recurso_id": 55,
+    "latitud": -12.020133416999954,
+    "longitud": -75.34133628899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 56,
+  "fields": {
+    "recurso_id": 56,
+    "latitud": -11.937634767999953,
+    "longitud": -75.33889997399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 57,
+  "fields": {
+    "recurso_id": 57,
+    "latitud": -11.932548284999939,
+    "longitud": -75.35689381399999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 58,
+  "fields": {
+    "recurso_id": 58,
+    "latitud": -11.937634767999953,
+    "longitud": -75.33889997399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 59,
+  "fields": {
+    "recurso_id": 59,
+    "latitud": -11.937634767999953,
+    "longitud": -75.33889997399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 60,
+  "fields": {
+    "recurso_id": 60,
+    "latitud": -11.897732332999965,
+    "longitud": -75.31854775199997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 61,
+  "fields": {
+    "recurso_id": 61,
+    "latitud": -11.967380754999965,
+    "longitud": -75.31325587099997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 62,
+  "fields": {
+    "recurso_id": 62,
+    "latitud": -11.950733361999937,
+    "longitud": -75.32012501099996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 63,
+  "fields": {
+    "recurso_id": 63,
+    "latitud": -11.967380754999965,
+    "longitud": -75.31325587099997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 64,
+  "fields": {
+    "recurso_id": 64,
+    "latitud": -11.87680407199997,
+    "longitud": -75.29540334899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 65,
+  "fields": {
+    "recurso_id": 65,
+    "latitud": -11.87680407199997,
+    "longitud": -75.29540334899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 66,
+  "fields": {
+    "recurso_id": 66,
+    "latitud": -11.87680407199997,
+    "longitud": -75.29540334899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 67,
+  "fields": {
+    "recurso_id": 67,
+    "latitud": -11.871241508999958,
+    "longitud": -75.30477191099999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 68,
+  "fields": {
+    "recurso_id": 68,
+    "latitud": -12.068023267999934,
+    "longitud": -75.33983423799998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 69,
+  "fields": {
+    "recurso_id": 69,
+    "latitud": -12.085486174999971,
+    "longitud": -75.32063348799994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 70,
+  "fields": {
+    "recurso_id": 70,
+    "latitud": -12.084601407999969,
+    "longitud": -75.32713819599996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 71,
+  "fields": {
+    "recurso_id": 71,
+    "latitud": -12.070212842999979,
+    "longitud": -75.33399433299996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 72,
+  "fields": {
+    "recurso_id": 72,
+    "latitud": -12.13515388199994,
+    "longitud": -75.26791473599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 73,
+  "fields": {
+    "recurso_id": 73,
+    "latitud": -12.136401060999958,
+    "longitud": -75.26803670999993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 74,
+  "fields": {
+    "recurso_id": 74,
+    "latitud": -12.136401060999958,
+    "longitud": -75.26803670999993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 75,
+  "fields": {
+    "recurso_id": 75,
+    "latitud": -12.136401060999958,
+    "longitud": -75.26803670999993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 76,
+  "fields": {
+    "recurso_id": 76,
+    "latitud": -12.062154222999936,
+    "longitud": -75.28795095199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 77,
+  "fields": {
+    "recurso_id": 77,
+    "latitud": -12.059721288999981,
+    "longitud": -75.28824237599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 78,
+  "fields": {
+    "recurso_id": 78,
+    "latitud": -12.059721288999981,
+    "longitud": -75.28824237599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 79,
+  "fields": {
+    "recurso_id": 79,
+    "latitud": -12.10314478999993,
+    "longitud": -75.27239083899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 80,
+  "fields": {
+    "recurso_id": 80,
+    "latitud": -12.059721288999981,
+    "longitud": -75.28824237599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 81,
+  "fields": {
+    "recurso_id": 81,
+    "latitud": -12.061367385999972,
+    "longitud": -75.28802361799995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 82,
+  "fields": {
+    "recurso_id": 82,
+    "latitud": -11.69044099599995,
+    "longitud": -75.56911430499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 83,
+  "fields": {
+    "recurso_id": 83,
+    "latitud": -11.69044099599995,
+    "longitud": -75.56911430499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 84,
+  "fields": {
+    "recurso_id": 84,
+    "latitud": -11.69044099599995,
+    "longitud": -75.56911430499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 85,
+  "fields": {
+    "recurso_id": 85,
+    "latitud": -11.69044099599995,
+    "longitud": -75.56911430499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 86,
+  "fields": {
+    "recurso_id": 86,
+    "latitud": -11.748618055999941,
+    "longitud": -75.22080748999997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 87,
+  "fields": {
+    "recurso_id": 87,
+    "latitud": -11.739206310999975,
+    "longitud": -75.22908718499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 88,
+  "fields": {
+    "recurso_id": 88,
+    "latitud": -11.812899888999937,
+    "longitud": -75.60566137199999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 89,
+  "fields": {
+    "recurso_id": 89,
+    "latitud": -11.85721627099997,
+    "longitud": -75.75397351899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 90,
+  "fields": {
+    "recurso_id": 90,
+    "latitud": -11.85721627099997,
+    "longitud": -75.75397351899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 91,
+  "fields": {
+    "recurso_id": 91,
+    "latitud": -11.881936577999966,
+    "longitud": -75.70234027899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 92,
+  "fields": {
+    "recurso_id": 92,
+    "latitud": -11.85721627099997,
+    "longitud": -75.75397351899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 93,
+  "fields": {
+    "recurso_id": 93,
+    "latitud": -11.949234847999946,
+    "longitud": -75.98235441399999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 94,
+  "fields": {
+    "recurso_id": 94,
+    "latitud": -11.828549127999963,
+    "longitud": -75.69804534299993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 95,
+  "fields": {
+    "recurso_id": 95,
+    "latitud": -11.781184391999943,
+    "longitud": -75.49921349999994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 96,
+  "fields": {
+    "recurso_id": 96,
+    "latitud": -11.781184391999943,
+    "longitud": -75.49921349999994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 97,
+  "fields": {
+    "recurso_id": 97,
+    "latitud": -11.781184391999943,
+    "longitud": -75.49921349999994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 98,
+  "fields": {
+    "recurso_id": 98,
+    "latitud": -11.84276363899994,
+    "longitud": -75.62480396199999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 99,
+  "fields": {
+    "recurso_id": 99,
+    "latitud": -11.75698157599993,
+    "longitud": -75.57309603099998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 100,
+  "fields": {
+    "recurso_id": 100,
+    "latitud": -11.75698157599993,
+    "longitud": -75.57309603099998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 101,
+  "fields": {
+    "recurso_id": 101,
+    "latitud": -11.764779945999976,
+    "longitud": -75.53898870799998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 102,
+  "fields": {
+    "recurso_id": 102,
+    "latitud": -11.76213102099996,
+    "longitud": -75.55278701499998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 103,
+  "fields": {
+    "recurso_id": 103,
+    "latitud": -11.74638889399995,
+    "longitud": -75.51293517699997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 104,
+  "fields": {
+    "recurso_id": 104,
+    "latitud": -11.73802938199998,
+    "longitud": -75.50988210599996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 105,
+  "fields": {
+    "recurso_id": 105,
+    "latitud": -11.40930248799998,
+    "longitud": -75.26458713599999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 106,
+  "fields": {
+    "recurso_id": 106,
+    "latitud": -11.729821235999964,
+    "longitud": -75.57047961299997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 107,
+  "fields": {
+    "recurso_id": 107,
+    "latitud": -11.793283819999942,
+    "longitud": -75.51963091399995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 108,
+  "fields": {
+    "recurso_id": 108,
+    "latitud": -11.835016043999929,
+    "longitud": -75.63599530299996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 109,
+  "fields": {
+    "recurso_id": 109,
+    "latitud": -11.806149001999927,
+    "longitud": -75.64483244899998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 110,
+  "fields": {
+    "recurso_id": 110,
+    "latitud": -11.815843911999934,
+    "longitud": -75.62421964099997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 111,
+  "fields": {
+    "recurso_id": 111,
+    "latitud": -11.85721627099997,
+    "longitud": -75.75397351899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 112,
+  "fields": {
+    "recurso_id": 112,
+    "latitud": -11.785183570999948,
+    "longitud": -75.71819220399993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 113,
+  "fields": {
+    "recurso_id": 113,
+    "latitud": -11.85721627099997,
+    "longitud": -75.75397351899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 114,
+  "fields": {
+    "recurso_id": 114,
+    "latitud": -11.785183570999948,
+    "longitud": -75.71819220399993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 115,
+  "fields": {
+    "recurso_id": 115,
+    "latitud": -11.771110915999941,
+    "longitud": -75.71896330799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 116,
+  "fields": {
+    "recurso_id": 116,
+    "latitud": -11.749520667999946,
+    "longitud": -75.59967658499994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 117,
+  "fields": {
+    "recurso_id": 117,
+    "latitud": -11.802646290999974,
+    "longitud": -75.66963511799997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 118,
+  "fields": {
+    "recurso_id": 118,
+    "latitud": -11.012739892999946,
+    "longitud": -76.17137200299999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 119,
+  "fields": {
+    "recurso_id": 119,
+    "latitud": -11.161098182999979,
+    "longitud": -75.99813868099994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 120,
+  "fields": {
+    "recurso_id": 120,
+    "latitud": -11.161098182999979,
+    "longitud": -75.99813868099994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 121,
+  "fields": {
+    "recurso_id": 121,
+    "latitud": -11.214585129999932,
+    "longitud": -75.97354601999996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 122,
+  "fields": {
+    "recurso_id": 122,
+    "latitud": -11.161098182999979,
+    "longitud": -75.99813868099994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 123,
+  "fields": {
+    "recurso_id": 123,
+    "latitud": -11.214585129999932,
+    "longitud": -75.97354601999996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 124,
+  "fields": {
+    "recurso_id": 124,
+    "latitud": -11.214531621999981,
+    "longitud": -75.97331685899997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 125,
+  "fields": {
+    "recurso_id": 125,
+    "latitud": -11.012739892999946,
+    "longitud": -76.17137200299999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 126,
+  "fields": {
+    "recurso_id": 126,
+    "latitud": -11.012739892999946,
+    "longitud": -76.17137200299999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 127,
+  "fields": {
+    "recurso_id": 127,
+    "latitud": -11.012739892999946,
+    "longitud": -76.17137200299999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 128,
+  "fields": {
+    "recurso_id": 128,
+    "latitud": -11.36864471399997,
+    "longitud": -75.68023282899998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 129,
+  "fields": {
+    "recurso_id": 129,
+    "latitud": -11.35283125799998,
+    "longitud": -75.65895244399996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 130,
+  "fields": {
+    "recurso_id": 130,
+    "latitud": -11.346622009999976,
+    "longitud": -75.65332974199998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 131,
+  "fields": {
+    "recurso_id": 131,
+    "latitud": -11.276717769999948,
+    "longitud": -75.78737354699996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 132,
+  "fields": {
+    "recurso_id": 132,
+    "latitud": -11.251946164999936,
+    "longitud": -75.86950613799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 133,
+  "fields": {
+    "recurso_id": 133,
+    "latitud": -11.25275299499998,
+    "longitud": -75.87498668199999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 134,
+  "fields": {
+    "recurso_id": 134,
+    "latitud": -11.46180873999998,
+    "longitud": -75.68738562199997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 135,
+  "fields": {
+    "recurso_id": 135,
+    "latitud": -11.419884139999965,
+    "longitud": -75.68765114599995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 136,
+  "fields": {
+    "recurso_id": 136,
+    "latitud": -11.475214446999928,
+    "longitud": -75.68576776299994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 137,
+  "fields": {
+    "recurso_id": 137,
+    "latitud": -11.419848049999928,
+    "longitud": -75.70287649199997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 138,
+  "fields": {
+    "recurso_id": 138,
+    "latitud": -11.443185294999978,
+    "longitud": -75.69276762199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 139,
+  "fields": {
+    "recurso_id": 139,
+    "latitud": -11.419884139999965,
+    "longitud": -75.68765114599995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 140,
+  "fields": {
+    "recurso_id": 140,
+    "latitud": -11.475214446999928,
+    "longitud": -75.68576776299994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 141,
+  "fields": {
+    "recurso_id": 141,
+    "latitud": -11.59752117599993,
+    "longitud": -76.09904137199999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 142,
+  "fields": {
+    "recurso_id": 142,
+    "latitud": -11.714708709999968,
+    "longitud": -76.12175178099994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 143,
+  "fields": {
+    "recurso_id": 143,
+    "latitud": -11.677097991999972,
+    "longitud": -76.09259266899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 144,
+  "fields": {
+    "recurso_id": 144,
+    "latitud": -10.979339000999971,
+    "longitud": -75.48697207399994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 145,
+  "fields": {
+    "recurso_id": 145,
+    "latitud": -11.053490044999933,
+    "longitud": -75.33194882199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 146,
+  "fields": {
+    "recurso_id": 146,
+    "latitud": -11.120572203999927,
+    "longitud": -75.35211588599998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 147,
+  "fields": {
+    "recurso_id": 147,
+    "latitud": -11.033339308999928,
+    "longitud": -75.31602442199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 148,
+  "fields": {
+    "recurso_id": 148,
+    "latitud": -10.961480373999962,
+    "longitud": -75.29421980599994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 149,
+  "fields": {
+    "recurso_id": 149,
+    "latitud": -11.137533274999953,
+    "longitud": -75.33273971499995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 150,
+  "fields": {
+    "recurso_id": 150,
+    "latitud": -10.94783685799996,
+    "longitud": -74.84662712399995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 151,
+  "fields": {
+    "recurso_id": 151,
+    "latitud": -10.956743829999937,
+    "longitud": -74.82714608899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 152,
+  "fields": {
+    "recurso_id": 152,
+    "latitud": -10.925156965999975,
+    "longitud": -74.87168645499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 153,
+  "fields": {
+    "recurso_id": 153,
+    "latitud": -10.858321075999982,
+    "longitud": -75.10547529299998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 154,
+  "fields": {
+    "recurso_id": 154,
+    "latitud": -11.037905954999928,
+    "longitud": -75.11182832899993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 155,
+  "fields": {
+    "recurso_id": 155,
+    "latitud": -10.858321075999982,
+    "longitud": -75.10547529299998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 156,
+  "fields": {
+    "recurso_id": 156,
+    "latitud": -10.936775187999956,
+    "longitud": -75.20155166699993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 157,
+  "fields": {
+    "recurso_id": 157,
+    "latitud": -10.94408336999993,
+    "longitud": -75.29056013199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 158,
+  "fields": {
+    "recurso_id": 158,
+    "latitud": -11.14405129399995,
+    "longitud": -75.40138733599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 159,
+  "fields": {
+    "recurso_id": 159,
+    "latitud": -11.118030766999937,
+    "longitud": -75.34442067199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 160,
+  "fields": {
+    "recurso_id": 160,
+    "latitud": -11.181240699999933,
+    "longitud": -75.45695254599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 161,
+  "fields": {
+    "recurso_id": 161,
+    "latitud": -11.118030766999937,
+    "longitud": -75.34442067199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 162,
+  "fields": {
+    "recurso_id": 162,
+    "latitud": -11.28552575599997,
+    "longitud": -75.31549085999995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 163,
+  "fields": {
+    "recurso_id": 163,
+    "latitud": -11.287794659999975,
+    "longitud": -75.25023635199994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 164,
+  "fields": {
+    "recurso_id": 164,
+    "latitud": -11.272020832999942,
+    "longitud": -75.06657353099996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 165,
+  "fields": {
+    "recurso_id": 165,
+    "latitud": -11.182477163999977,
+    "longitud": -75.31089996199995
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 166,
+  "fields": {
+    "recurso_id": 166,
+    "latitud": -11.038370967999981,
+    "longitud": -75.49580265299994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 167,
+  "fields": {
+    "recurso_id": 167,
+    "latitud": -11.03256894599997,
+    "longitud": -74.70945398899994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 168,
+  "fields": {
+    "recurso_id": 168,
+    "latitud": -11.433431495999969,
+    "longitud": -74.77976076999994
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 169,
+  "fields": {
+    "recurso_id": 169,
+    "latitud": -11.165742198999965,
+    "longitud": -74.08860648799998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 170,
+  "fields": {
+    "recurso_id": 170,
+    "latitud": -11.107113435999963,
+    "longitud": -74.38278217799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 171,
+  "fields": {
+    "recurso_id": 171,
+    "latitud": -11.265893541999958,
+    "longitud": -73.70662736999998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 172,
+  "fields": {
+    "recurso_id": 172,
+    "latitud": -10.960595308999928,
+    "longitud": -73.78979643099996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 173,
+  "fields": {
+    "recurso_id": 173,
+    "latitud": -11.031593977999933,
+    "longitud": -73.80802322299996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 174,
+  "fields": {
+    "recurso_id": 174,
+    "latitud": -11.473682064999934,
+    "longitud": -74.56096590199996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 175,
+  "fields": {
+    "recurso_id": 175,
+    "latitud": -11.276180121999971,
+    "longitud": -74.69856521499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 176,
+  "fields": {
+    "recurso_id": 176,
+    "latitud": -11.253918007999971,
+    "longitud": -74.63697649099998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 177,
+  "fields": {
+    "recurso_id": 177,
+    "latitud": -11.266653000999952,
+    "longitud": -74.61656594599998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 178,
+  "fields": {
+    "recurso_id": 178,
+    "latitud": -11.253918007999971,
+    "longitud": -74.63697649099998
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 179,
+  "fields": {
+    "recurso_id": 179,
+    "latitud": -11.301703663999945,
+    "longitud": -74.70071024999999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 180,
+  "fields": {
+    "recurso_id": 180,
+    "latitud": -11.28176826799995,
+    "longitud": -74.68044508499997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 181,
+  "fields": {
+    "recurso_id": 181,
+    "latitud": -11.417921495999963,
+    "longitud": -74.76792907599997
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 182,
+  "fields": {
+    "recurso_id": 182,
+    "latitud": -11.585508955999956,
+    "longitud": -74.96024676799993
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 183,
+  "fields": {
+    "recurso_id": 183,
+    "latitud": -11.107113435999963,
+    "longitud": -74.38278217799996
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 184,
+  "fields": {
+    "recurso_id": 184,
+    "latitud": -11.418192769999962,
+    "longitud": -74.76788302099999
+  }
+},
+{
+  "model": "home.coordenada",
+  "pk": 185,
+  "fields": {
+    "recurso_id": 185,
+    "latitud": -11.41689983599997,
+    "longitud": -74.76827824799994
+  }
+},
+{
+  "model": "home.favorito",
+  "pk": 1,
+  "fields": {
+    "usuario_id": 1,
+    "recurso_id": 1,
+    "is_active": false
+  }
+},
+{
+  "model": "sites.site",
+  "fields": {
+    "domain": "example.com",
+    "name": "example.com"
+  }
+},
+{
+  "model": "socialaccount.socialapp",
+  "pk": 1,
+  "fields": {
+    "provider": "google",
+    "name": "Google API",
+    "client_id": "329233830290-klvoilmv75m8vknq9ftfi2hn0keh9knc.apps.googleusercontent.com",
+    "secret": "7lxJB4HKHMypvnf75-0P_kWs",
+    "key": "",
+    "sites": [
+      [
+        "example.com"
+      ]
+    ]
+  }
+},
+{
+  "model": "socialaccount.socialaccount",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "hubert_alexander"
+    ],
+    "provider": "google",
+    "uid": "117555210110237482695",
+    "last_login": "2021-08-01T22:21:32.205Z",
+    "date_joined": "2021-08-01T22:21:32.206Z",
+    "extra_data": "{\"id\": \"117555210110237482695\", \"name\": \"HUBERT ALEXANDER HUAMANI DELGADO\", \"given_name\": \"HUBERT ALEXANDER\", \"family_name\": \"HUAMANI DELGADO\", \"picture\": \"https://lh3.googleusercontent.com/a-/AOh14GhCCLqQXec0Ao_rht3ScSOCHZdhoePvKBMZf9a0=s96-c\", \"locale\": \"es\"}"
+  }
+},
+{
+  "model": "socialaccount.socialtoken",
+  "pk": 1,
+  "fields": {
+    "app": 1,
+    "account": 1,
+    "token": "ya29.a0ARrdaM-azrUF_uurDz_OspeL-JhSOM20FrrjZWrsw-wwITQ955jZ8TQLrIR8NwqgXoBF8JWEUZNWFBH0BQKpdJJOIegDE7qGt_09lHsCR7YeL5CIPVJnvrfUXjcJ-rGI7N1YDpZIIvNHdVaMBRqFCHJreL56Dw",
+    "token_secret": "",
+    "expires_at": "2021-08-01T23:21:29.245Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2021-08-01T20:12:00.593Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "categoria"
+    ],
+    "object_id": "5",
+    "object_repr": "Folclore",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nombre Categor\\u00eda\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2021-08-01T20:12:58.803Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "categoria"
+    ],
+    "object_id": "4",
+    "object_repr": "Contemporary Achievements",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nombre Categor\\u00eda\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2021-08-01T20:13:36.956Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "categoria"
+    ],
+    "object_id": "3",
+    "object_repr": "Events and Events",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nombre Categor\\u00eda\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2021-08-01T20:13:55.553Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "categoria"
+    ],
+    "object_id": "2",
+    "object_repr": "Cultural sites",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nombre Categor\\u00eda\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2021-08-01T20:14:21.710Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "categoria"
+    ],
+    "object_id": "1",
+    "object_repr": "Natural Sites",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nombre Categor\\u00eda\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2021-08-01T22:20:46.540Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialapp"
+    ],
+    "object_id": "1",
+    "object_repr": "Google API",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2021-08-02T00:17:45.358Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "home",
+      "favorito"
+    ],
+    "object_id": "1",
+    "object_repr": "Favorito object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

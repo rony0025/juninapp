@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
-{% block title %}Pagina principal{% endblock %}
+{% block title %}{% trans 'Pagina principal' %}{% endblock %}
 {% block content %}
 <div class="carousel">
   <div class="slide fade">
     <img class="slide__fondo" src="{% static 'img/natural.jpg' %}" alt="natural.jpg">
-    <h2 class="slide__titulo">Sitios naturales</h2>
-    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <h2 class="slide__titulo">{% trans 'Sitios Naturales' %}</h2>
+    <h3 class="slide__subtitulo">{% trans 'Lugares naturales o las zonas naturales estrictamente delimitadas que tengan un valor universal excepcional desde el punto de vista de la ciencia, de la conservación o de la belleza natural' %}</h3>
     <div class="slide__indicador">
       <span class="dot" onclick="showSlides(1)"></span>
       <span class="dot" onclick="showSlides(2)"></span>
@@ -18,8 +19,8 @@
   </div>
   <div class="slide fade">
     <img class="slide__fondo" src="{% static 'img/cultural.png' %}" alt="cultural.png">
-    <h2 class="slide__titulo">Sitios culturales</h2>
-    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <h2 class="slide__titulo">{% trans 'Sitios Culturales' %}</h2>
+    <h3 class="slide__subtitulo">{% trans 'Lugar relacionado con hechos históricos, actividades, asentamientos humanos y transformaciones del territorio' %}</h3>
     <div class="slide__indicador">
       <span class="dot" onclick="showSlides(1)"></span>
       <span class="dot" onclick="showSlides(2)"></span>
@@ -30,8 +31,8 @@
   </div>
   <div class="slide fade">
     <img class="slide__fondo" src="{% static 'img/folclore.jpg' %}" alt="folclore.jpg">
-    <h2 class="slide__titulo">Folclore</h2>
-    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <h2 class="slide__titulo">{% trans 'Folclore' %}</h2>
+    <h3 class="slide__subtitulo">{% trans 'Involucran como temática principal alguna rama del arte o tradiciones y fiestas populares de una región concreta' %}</h3>
     <div class="slide__indicador">
       <span class="dot" onclick="showSlides(1)"></span>
       <span class="dot" onclick="showSlides(2)"></span>
@@ -42,8 +43,8 @@
   </div>
   <div class="slide fade">
     <img class="slide__fondo" src="{% static 'img/realizaciones.jpg' %}" alt="realizaciones.jpg">
-    <h2 class="slide__titulo">Realizaciones contemporaneas</h2>
-    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <h2 class="slide__titulo">{% trans 'Realizaciones contemporaneas' %}</h2>
+    <h3 class="slide__subtitulo">{% trans 'Construcciones actuales de gran utilidad para la sociedad y que tiene un valor turistico agregado' %}</h3>
     <div class="slide__indicador">
       <span class="dot" onclick="showSlides(1)"></span>
       <span class="dot" onclick="showSlides(2)"></span>
@@ -54,8 +55,8 @@
   </div>
   <div class="slide fade">
     <img class="slide__fondo" src="{% static 'img/eventos.jpg' %}" alt="eventos.jpg">
-    <h2 class="slide__titulo">Eventos y acontecimientos</h2>
-    <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+    <h2 class="slide__titulo">{% trans 'Eventos y Acontecimientos' %}</h2>
+    <h3 class="slide__subtitulo">{% trans 'De acuerdo a la época se realizan magnifica escenas de tradición y cultura' %}</h3>
     <div class="slide__indicador">
       <span class="dot" onclick="showSlides(1)"></span>
       <span class="dot" onclick="showSlides(2)"></span>
@@ -65,25 +66,24 @@
     </div>
   </div>
 </div>
-
-<p class="titulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-<p class="subtitulo">Quisque nec leo et eros venenatis.Curabitur ac mauris in leo fermentum</p>
+<p class="titulo">{% trans 'Junín es un departamento de la República del Perú ubicado en el centro del país' %}</p>
+<p class="subtitulo">{% trans 'La capital y ciudad más poblada de Junín es Huancayo, que está ubicada en el Valle del Mantaro' %}</p>
 
 <div class="seccion">
   <div class="seccion__img">
     <img class="seccion__img__imagen" src="{% static 'img/natural.jpg' %}" alt="natural.jpg">
   </div>
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Sitios naturales</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Sitios Naturales' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'Lugares naturales o las zonas naturales estrictamente delimitadas que tengan un valor universal excepcional desde el punto de vista de la ciencia, de la conservación o de la belleza natural' %}</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">{% trans 'Explorar' %}</a>
   </div>
 </div>
 <div class="seccion">
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Sitios culturales</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Sitios Culturales' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'Lugar relacionado con hechos históricos, actividades, asentamientos humanos y transformaciones del territorio' %}</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">{% trans 'Explorar' %}</a>
   </div>
   <div class="seccion__img">
     <img class="seccion__img__imagen" src="{% static 'img/cultural.png' %}" alt="cultural.png">
@@ -94,16 +94,16 @@
     <img class="seccion__img__imagen" src="{% static 'img/folclore.jpg' %}" alt="folclore.jpg">
   </div>
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Folclore</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-    <a class="seccion__descripcion__button" href=".">Explorar</a>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Folclore' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'Involucran como temática principal alguna rama del arte o tradiciones y fiestas populares de una región concreta' %}</p>
+    <a class="seccion__descripcion__button" href=".">{% trans 'Explorar' %}</a>
   </div>
 </div>
 <div class="seccion">
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Realizaciones contemporaneas</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">Explorar</a>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Realizaciones Contemporaneas' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'Construcciones actuales de gran utilidad para la sociedad y que tiene un valor turistico agregado' %}</p>
+    <a class="seccion__descripcion__button" href="{% url 'destinos' %}">{% trans 'Explorar' %}</a>
   </div>
   <div class="seccion__img">
     <img class="seccion__img__imagen" src="{% static 'img/realizaciones.jpg' %}" alt="realizaciones.jpg">
@@ -114,20 +114,20 @@
     <img class="seccion__img__imagen" src="{% static 'img/eventos.jpg' %}" alt="eventos.jpg">
   </div>
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Eventos y acontecimientos</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-    <a class="seccion__descripcion__button" href=".">Explorar</a>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Eventos y Acontecimientos' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'De acuerdo a la época se realizan magnifica escenas de tradición y cultura' %}</p>
+    <a class="seccion__descripcion__button" href=".">{% trans 'Explorar' %}</a>
   </div>
 </div>
 
 <div class="separador">
   <div class="compartir">
-    <h3 class="compartir__titulo">Comparte tu experiencia en viajes</h3>
-    <p class="compartir__descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur ipsum uisque nec leo et eros venenatis Curabitur ac mauris in leo fermentum </p>
+    <h3 class="compartir__titulo">{% trans 'Comparte tu experiencia en viajes' %}</h3>
+    <p class="compartir__descripcion">{% trans 'Registrate y accede a varias funciones, podrás guardar tu recurso turísticos favoritos, calificarlos en distintos criterios, escribir un comentario sobre ellos y sobre todo podrás compartir tus experiencia con otros viajeros' %}</p>
   </div>
 </div>
 
-<h4 class="recomendados__titulo">Recomendados para ti</h4>
+<h4 class="recomendados__titulo">{% trans 'Recomendados para ti' %}</h4>
 <div class="recomendados">
   <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
   <div class="recomendados__galeria">
@@ -147,7 +147,7 @@
             <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
             <span class="corazon__numero">{{ card.corazon.contador }}</span>
           </div>
-          <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          <a class="flecha" href="/recurso-turistico/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     {% endfor %}

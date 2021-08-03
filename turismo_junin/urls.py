@@ -16,28 +16,34 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView
-from home.views import homeView, destinoView, getDistritos, getDestinos, lugarTuristicoView, favoritosView, getCoordenadas, getRecomendaciones, getRecursos, addFavoritos, addComentario, getCalificacion, updateCalificacion, borrarComentario, getComentarios
-from django.conf import settings
-from django.conf.urls.static import static
+from home.views import *
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('', homeView, name='home'),
     path('destinos/', destinoView, name='destinos'),
-    path('destinos/<str:nombre>/', lugarTuristicoView),
+    path('cultura/', culturaView, name='cultura'),
+    path('recurso-turistico/<str:nombre>/', recursoTuristicoView),
     path('mis-favoritos/', favoritosView, name='favoritos'),
-    path('api/distritos/', getDistritos, name='api_distritos'),
-    path('api/destinos/', getDestinos),
-    path('api/coordenadas/', getCoordenadas),
-    path('api/calificacion/', getCalificacion),
-    path('api/recomendaciones/', getRecomendaciones),
-    path('api/favoritos/', getRecursos),
-    path('api/add/', addFavoritos),
+    
+    path('api/recursos/tangibles/', filteredResourcesTangiblesJson),
+    path('api/recursos/intangibles/', filteredResourcesIntangiblesJson),
+    
+    path('api/get/distritos/', distritosJson, name='api_distritos'),
+    path('api/get/coordenadas/', coordenadasJson),
+    path('api/get/recomendaciones/', recommendationsJson),
+
+    path('api/get/favoritos/', getFavoritos),
+    path('api/update/favoritos/', updateFavoritos),
+
+    path('api/get/calificacion/', getCalificacion),
+    path('api/update/calificacion/', updateCalificacion),
+
     path('api/get/comentario/', getComentarios),
     path('api/add/comentario/', addComentario),
-    path('api/delete/comentario/', borrarComentario),
-    path('api/update/calificacion/', updateCalificacion),
-    path('accounts/', include('allauth.urls')),
+    path('api/delete/comentario/', deleteComentario),
     path('logout', LogoutView.as_view(), name="logout"),
     
-] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

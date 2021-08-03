@@ -1,0 +1,15 @@
+{% load i18n %}
+<form action="/i18n/setlang/" method="post" style="display: flex; gap: 4px; align-items: center;">
+  <span class="idiomaDesplegable__icon">
+    <i class="fas fa-globe"></i>                    
+  </span>
+  {% csrf_token %}
+  <div class="select" style="display: inline;">
+    <select name="language" onchange="javascript:form.submit()" class="idiomaDesplegable">
+      {% for lang in LANGUAGES %}
+        <option value="{{ lang.0 }}"{% ifequal LANGUAGE_CODE lang.0 %} selected="selected"{% endifequal %} class="idioma__opciones">{{ lang.1 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  
+</form>

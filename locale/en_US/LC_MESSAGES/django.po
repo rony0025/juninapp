@@ -1,0 +1,420 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-03 08:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: home/models.py:11 home/models.py:22 home/models.py:35 home/models.py:48
+msgid "Nombre"
+msgstr "Name"
+
+#: home/models.py:14 home/templates/pages/cultura.html:21
+#: home/templates/pages/cultura.html:186 home/templates/pages/destinos.html:20
+#: home/templates/pages/destinos.html:183
+#: home/templates/pages/favoritos-auth.html:19
+msgid "Provincia"
+msgstr "Province"
+
+#: home/models.py:15
+msgid "Provincias"
+msgstr "Provinces"
+
+#: home/models.py:26 home/templates/pages/cultura.html:32
+#: home/templates/pages/cultura.html:187 home/templates/pages/destinos.html:31
+#: home/templates/pages/destinos.html:184
+#: home/templates/pages/favoritos-auth.html:33
+msgid "Distrito"
+msgstr "District"
+
+#: home/models.py:27
+msgid "Distritos"
+msgstr "Districts"
+
+#: home/models.py:40 home/templates/pages/cultura.html:188
+#: home/templates/pages/destinos.html:185
+msgid "Categoría"
+msgstr "Category"
+
+#: home/models.py:41
+msgid "Categorías"
+msgstr "Categories"
+
+#: home/models.py:49
+msgid "Dirección de la imagen"
+msgstr "Image direction"
+
+#: home/models.py:51
+msgid "Subtítulo"
+msgstr "Subtitle"
+
+#: home/models.py:52
+msgid "Descripción"
+msgstr "Description"
+
+#: home/models.py:54
+msgid "Puntuación"
+msgstr "Punctuation"
+
+#: home/models.py:59
+msgid "Recurso Turistico"
+msgstr "Tourist Resource"
+
+#: home/models.py:60
+msgid "Recursos Turisticos"
+msgstr "Tourist Resources"
+
+#: home/models.py:68
+msgid "Latitud"
+msgstr "Latitude"
+
+#: home/models.py:69
+msgid "Longitud"
+msgstr "Length"
+
+#: home/models.py:79
+msgid "Puntaje en accesibilidad"
+msgstr "Accessibility score"
+
+#: home/models.py:80
+msgid "Puntaje en aforo"
+msgstr "Capacity score"
+
+#: home/models.py:81
+msgid "Puntaje en eco amigable"
+msgstr "Eco friendly score"
+
+#: home/models.py:82
+msgid "Puntaje en educativo"
+msgstr "Educational score"
+
+#: home/models.py:83
+msgid "Puntaje en recreacional"
+msgstr "Recreational score"
+
+#: home/models.py:89
+msgid "Fecha de creación"
+msgstr "Creation date"
+
+#: home/models.py:90
+msgid "Contenido"
+msgstr "Contents"
+
+#: home/templates/base.html:28 home/templates/pages/destinos.html:4
+#: home/templates/pages/destinos.html:10
+msgid "Destinos"
+msgstr "Destinations"
+
+#: home/templates/base.html:29 home/templates/pages/cultura.html:5
+#: home/templates/pages/cultura.html:11
+msgid "Cultura"
+msgstr "Culture"
+
+#: home/templates/base.html:30 home/templates/pages/favoritos-auth.html:8
+#: home/templates/pages/favoritos.html:11
+#: home/templates/pages/favoritos.html:15
+msgid "Mis favoritos"
+msgstr "My favorites"
+
+#: home/templates/base.html:61
+msgid "Salir"
+msgstr "Exit"
+
+#: home/templates/base.html:68 home/templates/base.html:104
+msgid "Ingresa a tu cuenta"
+msgstr "Login to your account"
+
+#: home/templates/base.html:69 home/templates/base.html:105
+msgid "Continuar con google"
+msgstr "Continue with google"
+
+#: home/templates/base.html:81
+msgid "Buscanos en:"
+msgstr "Contact us:"
+
+#: home/templates/base.html:89
+msgid "Calle San Cristobal 245 Arequipa"
+msgstr "Street San Cristobal 245 Arequipa"
+
+#: home/templates/pages/cultura.html:12
+msgid ""
+"Disfruta y vive nuevas experiencias con las festividades, danzas, música y "
+"gastronomía de Junín"
+msgstr ""
+"Enjoy and live new experiences with festivities, dances, music and Junín "
+"gastronomy"
+
+#: home/templates/pages/cultura.html:18 home/templates/pages/destinos.html:17
+msgid "Por localización:"
+msgstr "By location:"
+
+#: home/templates/pages/cultura.html:39 home/templates/pages/destinos.html:38
+msgid "Por categoria:"
+msgstr "By category:"
+
+#: home/templates/pages/cultura.html:57 home/templates/pages/destinos.html:56
+#: home/templates/pages/favoritos-auth.html:59
+msgid "Filtrar"
+msgstr "Filter"
+
+#: home/templates/pages/cultura.html:58 home/templates/pages/destinos.html:57
+#: home/templates/pages/favoritos-auth.html:60
+msgid "Reiniciar"
+msgstr "Restart"
+
+#: home/templates/pages/cultura.html:61 home/templates/pages/destinos.html:60
+msgid "*Complete al menos un campo antes de explorar"
+msgstr "*Fill in at least one field before exploring"
+
+#: home/templates/pages/cultura.html:65 home/templates/pages/destinos.html:64
+#, python-format
+msgid " %(categoria)s recomendados"
+msgstr "Recommended %(categoria)s"
+
+#: home/templates/pages/cultura.html:156 home/templates/pages/destinos.html:151
+#: home/templates/pages/home.html:130
+msgid "Recomendados para ti"
+msgstr "Recommended for you"
+
+#: home/templates/pages/cultura.html:211 home/templates/pages/destinos.html:206
+msgid "Cargando..."
+msgstr "Loading..."
+
+#: home/templates/pages/cultura.html:221 home/templates/pages/cultura.html:236
+#: home/templates/pages/destinos.html:216
+#: home/templates/pages/destinos.html:231
+#: home/templates/pages/favoritos-auth.html:64
+msgid "Resultados"
+msgstr "Results"
+
+#: home/templates/pages/cultura.html:222 home/templates/pages/destinos.html:217
+msgid "No se encontraron coincidencias"
+msgstr "No matches found"
+
+#: home/templates/pages/destinos.html:11
+msgid ""
+"Encuentra el próximo lugar que debes visitar, no te pierdas visitar los "
+"sitios naturales, culturales y contemporáneos de Junín"
+msgstr ""
+"Find the next place you must visit, do not miss visiting the natural, "
+"cultural and contemporary sites of Junín"
+
+#: home/templates/pages/favoritos-auth.html:16
+msgid "Provincia:"
+msgstr "Province:"
+
+#: home/templates/pages/favoritos-auth.html:30
+msgid "Distrito:"
+msgstr "District:"
+
+#: home/templates/pages/favoritos-auth.html:40
+msgid "Sitios o lugares turisticos"
+msgstr "Tourist sites or places"
+
+#: home/templates/pages/favoritos-auth.html:48
+msgid "Recursos culturales"
+msgstr "Cultural Resources"
+
+#: home/templates/pages/favoritos.html:12
+msgid ""
+"Guarda los lugares turísticos o recurso culturales que más te gustaron, y "
+"buscalos rápidamente con el filtro"
+msgstr ""
+"Save the tourist places or cultural resources that you liked the most, and "
+"search for them quickly with the filter"
+
+#: home/templates/pages/favoritos.html:16
+msgid ""
+"Aún no tienes tus lugares, experiencia y atractivos turisticos favoritos."
+msgstr "You don't have your favorite places, experiences and attractions yet."
+
+#: home/templates/pages/favoritos.html:19
+msgid "Guarda tus lugares, experiencia y atractivos turisticos"
+msgstr "Save your places, experience and tourist attractions"
+
+#: home/templates/pages/favoritos.html:20
+msgid ""
+"Marca el corazón del recurso turístico que te gustó para añadirlo a tus "
+"favoritos, o desmarcarlo para quitar recurso turístico de tus favoritos"
+msgstr ""
+"Mark the heart of the tourist resource that you liked to add it to your "
+"favorites, or unmark it to remove tourist resource from your favorites"
+
+#: home/templates/pages/favoritos.html:32
+msgid "Sitios naturales"
+msgstr "Natural sites"
+
+#: home/templates/pages/favoritos.html:43
+msgid "Administra tus recursos turisticos favoritos"
+msgstr "Manage your favorite tourist resources"
+
+#: home/templates/pages/favoritos.html:45
+msgid ""
+"Encuentra fácilmente los lugares turísticos o recurso culturales de tu "
+"preferencia"
+msgstr "Easily find the tourist places or cultural resources of your choice"
+
+#: home/templates/pages/home.html:5
+msgid "Pagina principal"
+msgstr "Homepage"
+
+#: home/templates/pages/home.html:10 home/templates/pages/home.html:77
+msgid "Sitios Naturales"
+msgstr "Natural sites"
+
+#: home/templates/pages/home.html:11 home/templates/pages/home.html:78
+msgid ""
+"Lugares naturales o las zonas naturales estrictamente delimitadas que tengan "
+"un valor universal excepcional desde el punto de vista de la ciencia, de la "
+"conservación o de la belleza natural"
+msgstr ""
+"Natural sites or strictly delimited natural areas that have exceptional "
+"universal value from the point of view of science, conservation or natural "
+"beauty"
+
+#: home/templates/pages/home.html:22 home/templates/pages/home.html:84
+msgid "Sitios Culturales"
+msgstr "Cultural sites"
+
+#: home/templates/pages/home.html:23 home/templates/pages/home.html:85
+msgid ""
+"Lugar relacionado con hechos históricos, actividades, asentamientos humanos "
+"y transformaciones del territorio"
+msgstr ""
+"Place related to historical events, activities, human settlements and "
+"transformations of the territory"
+
+#: home/templates/pages/home.html:34 home/templates/pages/home.html:97
+msgid "Folclore"
+msgstr "Folklore"
+
+#: home/templates/pages/home.html:35 home/templates/pages/home.html:98
+msgid ""
+"Involucran como temática principal alguna rama del arte o tradiciones y "
+"fiestas populares de una región concreta"
+msgstr ""
+"They involve as main theme some branch of art or traditions and popular "
+"festivals of a specific region"
+
+#: home/templates/pages/home.html:46
+msgid "Realizaciones contemporaneas"
+msgstr "Contemporary achievements"
+
+#: home/templates/pages/home.html:47 home/templates/pages/home.html:105
+msgid ""
+"Construcciones actuales de gran utilidad para la sociedad y que tiene un "
+"valor turistico agregado"
+msgstr ""
+"Current constructions of great use for society and that have an added "
+"tourist value"
+
+#: home/templates/pages/home.html:58 home/templates/pages/home.html:117
+msgid "Eventos y Acontecimientos"
+msgstr "Events and Happenings"
+
+#: home/templates/pages/home.html:59 home/templates/pages/home.html:118
+msgid ""
+"De acuerdo a la época se realizan magnifica escenas de tradición y cultura"
+msgstr ""
+"According to the time, magnificent scenes of tradition and culture are made"
+
+#: home/templates/pages/home.html:69
+msgid ""
+"Junín es un departamento de la República del Perú ubicado en el centro del "
+"país"
+msgstr ""
+"Junín is a department of the Republic of Peru located in the center of the "
+"country"
+
+#: home/templates/pages/home.html:70
+msgid ""
+"La capital y ciudad más poblada de Junín es Huancayo, que está ubicada en el "
+"Valle del Mantaro"
+msgstr ""
+"The capital and most populated city of Junín is Huancayo, which is located "
+"in the Mantaro Valley"
+
+#: home/templates/pages/home.html:79 home/templates/pages/home.html:86
+#: home/templates/pages/home.html:99 home/templates/pages/home.html:106
+#: home/templates/pages/home.html:119
+msgid "Explorar"
+msgstr "Explore"
+
+#: home/templates/pages/home.html:104
+msgid "Realizaciones Contemporaneas"
+msgstr "Contemporary achievements"
+
+#: home/templates/pages/home.html:125
+msgid "Comparte tu experiencia en viajes"
+msgstr "Share your travel experience"
+
+#: home/templates/pages/home.html:126
+msgid ""
+"Registrate y accede a varias funciones, podrás guardar tu recurso turísticos "
+"favoritos, calificarlos en distintos criterios, escribir un comentario sobre "
+"ellos y sobre todo podrás compartir tus experiencia con otros viajeros"
+msgstr ""
+"Register and access various functions, you can save your favorite tourist "
+"resource, rate them in different criteria, write a comment about them and "
+"above all you can share your experience with other travelers"
+
+#: home/templates/pages/lugar.html:70
+msgid "Comentarios"
+msgstr "Comments"
+
+#: home/templates/pages/lugar.html:70 home/templates/pages/lugar.html:241
+#: home/templates/pages/lugar.html:361
+msgid "opiniones"
+msgstr "opinions"
+
+#: home/templates/pages/lugar.html:79
+msgid "Agregar un comentario"
+msgstr "Add a comment"
+
+#: home/templates/pages/lugar.html:118
+msgid "Actualizando..."
+msgstr "Updating ..."
+
+#: home/templates/pages/lugar.html:229 home/templates/pages/lugar.html:241
+msgid "Calificación"
+msgstr "Rating"
+
+#: home/templates/pages/lugar.html:231
+msgid "Enviar calificación"
+msgstr "Submit rating"
+
+#: home/templates/pages/lugar.html:248
+msgid "Calificar"
+msgstr "Rate"
+
+#: home/templates/pages/lugar.html:326
+msgid "[ Eliminar ]"
+msgstr "[ Delete ]"
+
+#: home/templates/pages/lugar.html:338
+msgid "Aún nadie ha comentado"
+msgstr "No one has commented yet"
+
+#: home/templates/pages/lugar.html:358
+msgid "Cargar más"
+msgstr "Load more"
+
+#: turismo_junin/settings.py:133
+msgid "Español"
+msgstr ""
+
+#: turismo_junin/settings.py:134
+msgid "English"
+msgstr ""

@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c=hk--)^*x%t8_duy63*2bf5f4rji*_akvrvsp2uv=32ynhjfx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'parler',
 ]
 
 SITE_ID = 1
@@ -54,12 +55,12 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'turismo_junin.urls'
@@ -75,9 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                # `allauth` needs this from django
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', # `allauth` needs this from django
+                'django.template.context_processors.i18n', # Util para internacionalizacion
             ],
         },
     },
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'turismo_junin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -129,24 +129,29 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ('es', _('Español')),
+    ('en-us', _('English'))
+]
+
+# esta carpeta la debemos crear nosotros
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-
 
 STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -158,5 +163,15 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+PARLER_LANGUAGES = {
+    SITE_ID: (
+        {'code': 'es', },
+        {'code': 'en-us', },
+    ),
+    'default': {
+        'fallback': 'es',
+        'hide_untranslated': False,
+    }
+}
 
+PARLER_SHOW_EXCLUDED_LANGUAGE_TABS = True

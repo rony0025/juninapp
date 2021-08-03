@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %}Mis favoritos{% endblock %}
 {% block enlace_favoritos %} navbar__menu__enlace--active{% endblock %}
 {% block content %}
 <div class="slide">
   <img class="slide__fondo" src="{% static 'img/favoritos.jpg' %}" alt="destinos.png">
-  <h2 class="slide__titulo">Mis favoritos</h2>
-  <h3 class="slide__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</h3>
+  <h2 class="slide__titulo">{% trans 'Mis favoritos' %}</h2>
+  <h3 class="slide__subtitulo">{% trans 'Guarda los lugares turísticos o recurso culturales que más te gustaron, y buscalos rápidamente con el filtro' %}</h3>
 </div>
 
-<p class="titulo">Mis favoritos</p>
-<p class="subtitulo">Aún no tienes tus lugares, experiencia y atractivos turisticos favoritos.</p>
+<p class="titulo">{% trans 'Mis favoritos' %}</p>
+<p class="subtitulo">{% trans 'Aún no tienes tus lugares, experiencia y atractivos turisticos favoritos.' %}</p>
 <div class="seccion">
   <div class="seccion__descripcion">
-    <h3 class="seccion__descripcion__titulo">Guarda tus lugares, experiencia y atractivos turisticos</h3>
-    <p class="seccion__descripcion__informacion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
+    <h3 class="seccion__descripcion__titulo">{% trans 'Guarda tus lugares, experiencia y atractivos turisticos' %}</h3>
+    <p class="seccion__descripcion__informacion">{% trans 'Marca el corazón del recurso turístico que te gustó para añadirlo a tus favoritos, o desmarcarlo para quitar recurso turístico de tus favoritos' %}</p>
   </div>
   
   <div class="card">
@@ -27,7 +29,7 @@
     <div class="card__descripcion">
       <div class="etiqueta">
         <span class="etiqueta__icono"><i class="fas fa-tag"></i></span>
-        <span class="etiqueta__clase">Sitios Naturales</span>
+        <span class="etiqueta__clase">{% trans 'Sitios naturales' %}</span>
       </div>
       <div class="corazon">
         <span class="corazon__icon"><i class="fas fa-heart"></i></span>
@@ -38,10 +40,9 @@
   </div>
 </div>
 <div class="imagen-container">
-  <p class="imagen-container__titulo">Administra tus recursos favoritos</p>
+  <p class="imagen-container__titulo">{% trans 'Administra tus recursos turisticos favoritos' %}</p>
   <img class="imagen-container__imagen" src="{% static 'img/favoritos_auth.jpg' %}" alt="favoritos con login">
-  <p class="imagen-container__subtitulo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at enim ligula. Quisque nec leo et eros pharetra venenatis.</p>
-
+  <p class="imagen-container__subtitulo">{% trans 'Encuentra fácilmente los lugares turísticos o recurso culturales de tu preferencia' %}</p>
 </div>
 
 {% endblock %}

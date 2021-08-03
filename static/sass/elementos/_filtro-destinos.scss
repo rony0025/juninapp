@@ -2,18 +2,19 @@
   margin: 2.5rem 10rem 0.25rem 10rem;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 
   &__localizacion{
     display: grid;
-    grid-template-columns: auto 10rem 10rem;
+    grid-template-columns: 11rem 11rem 11rem;
     column-gap: 0.5rem;
     align-items: center;
   }
 
   &__categoria{
     display: grid;
-    grid-template-columns: auto 10rem;
+    grid-template-columns: 11rem 22.5rem;
     column-gap: 0.5rem;
     align-items: center;
   }
@@ -28,6 +29,7 @@
     font-size: 1.25rem;
     font-weight: bold;
     background-color: var(--bg-color);
+    flex: 1;
 
     &:hover{
       background-color: hsla(204, 64%, 55%, 1);
@@ -41,6 +43,22 @@
   }
 }
 
+.filtro--selection{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.filtro--button{
+  display: flex;
+  flex: 2;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .filtro__error{
   display: none;
   color: var(--rojo);
@@ -48,4 +66,14 @@
   font-size: 1.2rem;
   margin: 0 10rem;
   margin-top: 1rem;
+}
+
+.loader_vacio{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
 }

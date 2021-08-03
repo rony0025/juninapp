@@ -1,5 +1,7 @@
 {% load static %}
 {% load socialaccount %}
+{% load i18n %}
+
 {% providers_media_js %}
 
 <!DOCTYPE html>
@@ -23,17 +25,18 @@
           <img src="{% static 'img/logo.png' %}" alt="logo.png" class="navbar__logo__imagen">
         </a>
         <div class="navbar__menu">
-          <a class="navbar__menu__enlace{% block enlace_destino %}{% endblock %}" href="{% url 'destinos' %}">Destinos</a>
-          <a class="navbar__menu__enlace{% block enlace_cultura %}{% endblock %}" href=".">Cultura</a>
-          <a class="navbar__menu__enlace{% block enlace_favoritos %}{% endblock %}" href="{% url 'favoritos' %}">Mis favoritos</a>
-          <div class="navbar__menu__buscador">
+          <a class="navbar__menu__enlace{% block enlace_destino %}{% endblock %}" href="{% url 'destinos' %}">{% trans 'Destinos' %}</a>
+          <a class="navbar__menu__enlace{% block enlace_cultura %}{% endblock %}" href="{% url 'cultura' %}">{% trans 'Cultura' %}</a>
+          <a class="navbar__menu__enlace{% block enlace_favoritos %}{% endblock %}" href="{% url 'favoritos' %}">{% trans 'Mis favoritos' %}</a>
+          <!-- <div class="navbar__menu__buscador">
             <form action="." class="buscador">
               <input type="text" class="buscador__input buscador__input--focus" placeholder="Buscar">
               <a class="buscador__icon buscador__icon--focus"><i class="fas fa-search"></i></a>              
             </form>
-          </div>
+          </div> -->
+          {% include 'util/change_language.html' %}
           
-          <div class="navbar__menu__desplegable">
+          <!-- <div class="navbar__menu__desplegable">
             <span class="navbar__menu__desplegable__icono">
               <i class="fas fa-globe"></i>                    
             </span>
@@ -42,7 +45,7 @@
               <p class="navbar__menu__desplegable__lista__item">Ingles</p>
               <p class="navbar__menu__desplegable__lista__item">Portugues</p>
             </div>
-          </div>
+          </div> -->
     
           <div class="navbar__menu__desplegable">
             <span class="navbar__menu__desplegable__icono">
@@ -55,15 +58,15 @@
             {% if user.is_authenticated %}
               <div class="navbar__menu__desplegable__lista">
                 <h3 class="navbar__menu__desplegable__lista__titulo">{{ user.nombre }}</h3>
-                <a class="navbar__menu__desplegable__lista__google" href="{% url 'logout' %}"><span><i class="fab fa-google"></i></span>Salir</a>
+                <a class="navbar__menu__desplegable__lista__google" href="{% url 'logout' %}"><span><i class="fab fa-google"></i></span>{% trans 'Salir' %}</a>
               </div>
             {% else %}
               <div class="navbar__menu__desplegable__lista">
                 <div class="navbar__menu__desplegable__lista__logo">
                   <img class="navbar__menu__desplegable__lista__logo__imagen" src="{% static 'img/logo.png' %}" alt="logo.png">
                 </div>
-                <h3 class="navbar__menu__desplegable__lista__titulo">Ingresa a tu cuenta</h3>
-                <a class="navbar__menu__desplegable__lista__google" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>Continuar con google</a>
+                <h3 class="navbar__menu__desplegable__lista__titulo">{% trans 'Ingresa a tu cuenta' %}</h3>
+                <a class="navbar__menu__desplegable__lista__google" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>{% trans 'Continuar con google' %}</a>
               </div>
             {% endif %}
           </div>
@@ -75,7 +78,7 @@
     <footer class="footer_container">
       <div class="footer">
         <div class="footer__redes-sociales">
-          <p class="footer__redes-sociales__texto">Buscanos en:</p>
+          <p class="footer__redes-sociales__texto">{% trans 'Buscanos en:' %}</p>
           <a href="." class="footer__redes-sociales__icono"><i class="fab fa-facebook"></i></a>
           <a href="." class="footer__redes-sociales__icono"><i class="fab fa-twitter"></i></a>
           <a href="." class="footer__redes-sociales__icono"><i class="fab fa-instagram-square"></i></a>
@@ -83,7 +86,7 @@
         </div>
         <div class="footer__contacto">
           <span href="." class="footer__contacto__icono"><i class="fas fa-map-marker-alt"></i></span>
-          <span href="." class="footer__contacto__texto">Calle San Cristobal 245 Arequipa</span>
+          <span href="." class="footer__contacto__texto">{% trans 'Calle San Cristobal 245 Arequipa' %}</span>
           <span href="." class="footer__contacto__icono"><i class="far fa-envelope"></i></span>
           <span href="." class="footer__contacto__texto">correo@gmail.com</span>
           <span href="." class="footer__contacto__icono"><i class="fas fa-phone-alt"></i></span>
@@ -98,8 +101,8 @@
         <div class="login__imagen-container">
           <img class="login__imagen-container__imagen" src="{% static 'img/logo.png' %}" alt="logo.png">
         </div>
-        <h3 class="login__titulo">Ingresa a tu cuenta</h3>
-        <a class="login__button" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>Continuar con google</a>
+        <h3 class="login__titulo">{% trans 'Ingresa a tu cuenta' %}</h3>
+        <a class="login__button" href="{% provider_login_url 'google' %}"><span><i class="fab fa-google"></i></span>{% trans 'Continuar con google' %}</a>
       </div>
     </div>
 

@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% block title %}{% trans 'Destinos' %}{% endblock %}
-{% block enlace_destino %} navbar__menu__enlace--active{% endblock %}
+
+{% block title %}{% trans 'Cultura' %}{% endblock %}
+{% block enlace_cultura %} navbar__menu__enlace--active{% endblock %}
 {% block content %}
 
 <div class="slide">
-  <img class="slide__fondo" src="{% static 'img/destinos.png' %}" alt="destinos.png">
-  <h2 class="slide__titulo">{% trans 'Destinos' %}</h2>
-  <h3 class="slide__subtitulo">{% trans 'Encuentra el próximo lugar que debes visitar, no te pierdas visitar los sitios naturales, culturales y contemporáneos de Junín' %}</h3>
+  <img class="slide__fondo" src="{% static 'img/cultura.jpg' %}" alt="cultura.jpg">
+  <h2 class="slide__titulo">{% trans 'Cultura' %}</h2>
+  <h3 class="slide__subtitulo">{% trans 'Disfruta y vive nuevas experiencias con las festividades, danzas, música y gastronomía de Junín' %}</h3>
 </div>
 
 <form id="filtro-formulario" class="filtro--destinos">
@@ -88,13 +89,16 @@
     </div>
   {% endfor %}
 </div>
-<div id="recomendaciones"></div>
+
+<div id="recomendaciones">
+
+</div>
 
 {% endblock %}
 
 {% block scripts %}
   <script>
-        function generarDistritos(provincia){
+    function generarDistritos(provincia){
       let selection = document.getElementById("distritoSelection");
       let content = selection.querySelector(".selection__box__content");
       let optionList = selection.querySelector(".selection__option");
@@ -138,6 +142,7 @@
         });
       });
     }
+
     function pedirRecomendaciones(resultado){
       fetch(`/api/get/recomendaciones?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
         .then(response => response.json())
@@ -167,8 +172,6 @@
 
     activarAnimacionMenusDesplegables();
 
-    let dataCard = []
-    // Obtiene los resultados de la consulta de recursos turisticos y los muestra en el navegador
     function reiniciar(event) {
       event.preventDefault();
       document.getElementById("provincia-input").value = ""
@@ -191,6 +194,8 @@
         categoria.classList.replace("selection__box__content--full", "selection__box__content--void");
     }
 
+    let dataCard = []
+    // Obtiene los resultados de la consulta de recursos turisticos y los muestra en el navegador
     function consultarLugares(event){
       event.preventDefault();
       provincia = document.getElementById("provincia-input").value
@@ -203,8 +208,8 @@
       else{
         document.getElementById("error").style.display = "none";
         let resultado = document.getElementById("resultadosLugares");
-        document.getElementById("resultadosLugares").innerHTML = `<div class="loader_vacio">{% trans 'Cargando...' %}</div>`
-        fetch(`/api/recursos/tangibles?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
+        document.getElementById("resultadosLugares").innerHTML = `<div class="loader_vacio">{% trans 'Cargando...' %}</div>`;
+        fetch(`/api/recursos/intangibles?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
         .then(response => response.json())
         .then(data => {
           dataCard = data;

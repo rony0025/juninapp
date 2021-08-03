@@ -58,46 +58,6 @@ function activarAnimacionMenusDesplegables(){
     });
   });
 }
-
-// Coloca la lista de distritos correspondientes a una provincia dentro de las opciones del menu desplegable de distritos
-function generarDistritos(provincia){
-  let selection = document.getElementById("distritoSelection");
-  let content = selection.querySelector(".selection__box__content");
-  let optionList = selection.querySelector(".selection__option");
-  let icon = selection.querySelector(".selection__box__icon");
-  
-  if(content != "Distrito" && document.getElementById("provincia").innerHTML != provincia){
-    if(content.classList.contains("selection__box__content--full")){
-      content.classList.replace("selection__box__content--full", "selection__box__content--void");
-      content.innerHTML = "Distrito";
-    }
-  }
-  selection.classList.remove("selection--disabled");
-  fetch(`/api/distritos?provincia=${provincia}`)
-  .then(response => response.json())
-  .then(data => {
-    let distritoArray = data;
-    let distritosHTML = "";
-    for (let i = 0; i < distritoArray.length; i++)
-      distritosHTML += '<div class="selection__option__item">' + distritoArray[i] + '</div>'
-    document.getElementById("distritoList").innerHTML = distritosHTML;
-
-    let itemArray = document.getElementById("distritoList").querySelectorAll(".selection__option__item");
-    itemArray.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        content.innerHTML = e.currentTarget.innerHTML;
-        if(optionList.classList.contains("selection__option--open")){
-          optionList.classList.replace("selection__option--open", "selection__option--close");
-          icon.classList.replace("selection__box__icon--up", "selection__box__icon--down");
-        }
-        if(content.classList.contains("selection__box__content--void")){
-          content.classList.replace("selection__box__content--void", "selection__box__content--full");
-        }
-      });
-    });
-  });
-}
-
 // Devuelve en texto plano el HTML de una card
 function generarCardHTML(imagen, nombre, provincia, categoria, corazones, marcado){
   let cardsHTML = `
@@ -116,7 +76,7 @@ function generarCardHTML(imagen, nombre, provincia, categoria, corazones, marcad
           <span class="corazon__icon" onclick="addFavoritos(event, '${nombre}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
           <span class="corazon__numero">${corazones}</span>
         </div>
-        <a class="flecha" href="/destinos/${nombre}/"><i class="fas fa-arrow-right"></i></a>
+        <a class="flecha" href="/recurso-turistico/${nombre}/"><i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
     `;
@@ -149,26 +109,6 @@ function activarRecomendaciones(){
   });
 }
 
-// Agrega animacion a los checklist
-function activarCheckList (){
-  checklistArray = document.querySelectorAll(".checklist");
-  (checklistArray.length > 0 ) && checklistArray.forEach((check) => {
-    radioInput = check.querySelector(".checklist__input");
-    radioInput.addEventListener('change', (e) =>{
-      checklistArray.forEach((c) => {
-        marca = c.querySelector(".checklist__marca");
-        if(marca.classList.contains("checklist__marca--active")){
-          marca.classList.replace("checklist__marca--active", "checklist__marca--desactive");
-        }
-      });
-      marca = e.target.parentNode.querySelector(".checklist__marca");
-      if(marca.classList.contains("checklist__marca--desactive")){
-        marca.classList.replace("checklist__marca--desactive", "checklist__marca--active");
-      }
-    })
-  });
-}
-
 // Activa el boton para cerrar el modal
 function activarModal(){
   let modal = document.getElementById("modal-login");
@@ -194,41 +134,33 @@ function activarModal(){
 } */
 
 function addFavoritos(event, nombre){
-  const QUITAR = "QUITAR";
-  const CAMBIAR_AÑADIR = "CAMBIAR_AÑADIR";
-  const CREAR_AÑADIR = "CREAR_AÑADIR";
-  const SIN_PERMISOS = "SIN_PERMISOS";
 
   let corazon = event.currentTarget;
   let corazon_count = corazon.parentNode.querySelector(".corazon__numero");
-  fetch(`/api/add?nombre=${nombre}`)
+  fetch(`/api/update/favoritos?nombre=${nombre}`)
     .then(response => response.json())
     .then(data => {
-      switch (data.status) {
-        case QUITAR:
+      switch (data.message) {
+        case "Se quito a favoritos":
           if(corazon.parentNode.classList.contains("corazon--active")){
             corazon.parentNode.classList.replace("corazon--active", "corazon--desactive")
-            corazon_count.innerText = data.corazones;
+            corazon_count.innerText = data.resource.corazones;
           }
           break;
-        case CAMBIAR_AÑADIR:
-        case CREAR_AÑADIR:
+        case "Se añadio a favoritos":
           if(corazon.parentNode.classList.contains("corazon--desactive")){
             corazon.parentNode.classList.replace("corazon--desactive", "corazon--active")
-            corazon_count.innerText = data.corazones;
+            corazon_count.innerText = data.resource.corazones;
           }
           break;
-        case SIN_PERMISOS:
+        case "Sin permisos":
           let modal = document.getElementById("modal-login");
           if(modal.classList.contains("modal--desactive"))
             modal.classList.replace("modal--desactive", "modal--active")
           break;
-        default:
-          console.log("No es una opcion válida")
-          break;
       }
-      console.log(data.status)
-      pedirCards && pedirCards()
+      console.log(data);
+      pedirCards && pedirCards();
     })
   /* if(corazon.parentNode.classList.contains("corazon--active")){
     corazon.parentNode.classList.replace("corazon--active", "corazon--desactive")
@@ -238,27 +170,4 @@ function addFavoritos(event, nombre){
     corazon.parentNode.classList.replace("corazon--desactive", "corazon--active")
     corazon_count.innerText = parseInt(corazon_count.innerText) + 1;
   } */
-}
-
-function pedirRecomendaciones(resultado){
-  fetch(`/api/recomendaciones?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`)
-    .then(response => response.json())
-    .then(data => {
-      let cards = data;
-      let cardsHTML = "";
-      cards.forEach(({link, nombre, provincia, categoria, corazon}) => {
-        cardsHTML += generarCardHTML(link, nombre, provincia, categoria, corazon.contador, corazon.marcado);
-      });
-      resultadoHTML = `
-      <h4 class="recomendados__titulo">Recomendados para ti</h4>
-      <div class="recomendados">
-        <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
-        <div class="recomendados__galeria">
-          ${cardsHTML}
-        </div>
-        <span class="recomendados__button--derecha"><i class="fas fa-chevron-right"></i></span>
-      </div>`;
-      resultado.innerHTML = resultadoHTML;
-      activarRecomendaciones();
-    });
 }

@@ -1,63 +1,67 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Mis favoritos{% endblock %}
 {% block enlace_favoritos %} navbar__menu__enlace--active{% endblock %}
 {% block content %}
-<h2 class="favoritos__titulo">Mis favoritos</h2>
+<h2 class="favoritos__titulo">{% trans 'Mis favoritos' %}</h2>
 <div class="favoritos">
   <div class="favoritos__filtro">
-    <form action="." class="buscador">
+    <!-- <form action="." class="buscador">
       <input type="text" class="buscador__input buscador__input--focus" placeholder="Buscar">
       <a class="buscador__icon buscador__icon--focus"><i class="fas fa-search"></i></a>              
-    </form>
+    </form> -->
     <div class="favoritos__filtro__provincia">
-      <span class="favoritos__filtro__etiqueta">Provincia:</span>
+      <span class="favoritos__filtro__etiqueta">{% trans 'Provincia:' %}</span>
       <div class="selection">
         <div class="selection__box">
-          <span id="provincia" class="selection__box__content selection__box__content--void">Provincia</span>
+          <span id="provincia" class="selection__box__content selection__box__content--void">{% trans 'Provincia' %}</span>
           <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
-          <input id="provincia" type="hidden" value="Provincia">
         </div>
         <div class="selection__option selection__option--close">
           {% for provincia in provincias %}
-            <div class="selection__option__item" onclick="generarDistritos('{{provincia}}')">{{provincia.nombre}}</div>
+            <div class="selection__option__item" onclick="generarDistritos('{{provincia.id}}')">{{provincia.nombre}}</div>
           {% endfor %}
         </div>
       </div>
     </div>
     <div class="favoritos__filtro__distrito">
-      <span class="favoritos__filtro__etiqueta">Distrito:</span>
+      <span class="favoritos__filtro__etiqueta">{% trans 'Distrito:' %}</span>
       <div id="distritoSelection" class="selection selection--disabled">
         <div class="selection__box">
-          <span id="distrito" class="selection__box__content selection__box__content--void">Distrito</span>
+          <span id="distrito" class="selection__box__content selection__box__content--void">{% trans 'Distrito' %}</span>
           <span class="selection__box__icon selection__box__icon--down"><i class="fas fa-angle-down"></i></span>
         </div>
         <div id="distritoList" class="selection__option selection__option--close"></div>
       </div>
     </div>
     
-    <span class="favoritos__filtro__etiqueta">Sitios o lugares turisticos</span>
+    <span class="favoritos__filtro__etiqueta">{% trans 'Sitios o lugares turisticos' %}</span>
     {% for categoria in categorias.tangibles %}
       <div class="checklist favoritos__filtro__checklist">
-        <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
-        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__marca checklist__marca--desactive" for="{{categoria.nombre}}"></label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.id}}">
         <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
       </div>
     {% endfor %}
-    <span class="favoritos__filtro__etiqueta">Cultura</span>
+    <span class="favoritos__filtro__etiqueta">{% trans 'Recursos culturales' %}</span>
     {% for categoria in categorias.no_tangibles %}
       <div class="checklist favoritos__filtro__checklist">
-        <label class="checklist__marca checklist__marca--desactive" for="{{categoria}}"></label>
-        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.nombre}}">
+        <label class="checklist__marca checklist__marca--desactive" for="{{categoria.nombre}}"></label>
+        <input class="checklist__input" type="radio" id="{{categoria.nombre}}" name="categoria" value="{{categoria.id}}">
         <label class="checklist__etiqueta" for="{{categoria.nombre}}">{{categoria.nombre}}</label>
       </div>
     {% endfor %}
-    <a class="filtro--destinos__button" href="javascript:;" onclick="pedirCards()">Explorar</a>
+    <input id="provincia-input" type="hidden" name="provincia">
+    <input id="distrito-input" type="hidden" name="distrito">
+    <input id="categoria-input" type="hidden" name="categoria">
+    <button class="filtro--destinos__button" type="submit" onclick="pedirCards(event)" style="outline: none; border: 0; max-height: 3.25rem;">{% trans 'Filtrar' %}</button>
+    <button class="filtro--destinos__button" type="submit" onclick="reiniciar(event)" style="outline: none; border: 0; max-height: 3.25rem;">{% trans 'Reiniciar' %}</button>
   </div>
   <div class="favoritos__resultado">
 
-    <h3 class="favoritos__resultado__titulo">Resultados</h3>
+    <h3 class="favoritos__resultado__titulo">{% trans 'Resultados' %}</h3>
     <div class="favoritos__resultado__galeria"> </div>
     <div class="paginacion"> </div>
   </div>
@@ -66,6 +70,70 @@
 {% endblock %}
 {% block scripts %}
   <script>
+    function generarDistritos(provincia){
+      let selection = document.getElementById("distritoSelection");
+      let content = selection.querySelector(".selection__box__content");
+      let optionList = selection.querySelector(".selection__option");
+      let icon = selection.querySelector(".selection__box__icon");
+      
+      if(content != "Distrito" && document.getElementById("provincia").innerHTML != provincia){
+        if(content.classList.contains("selection__box__content--full")){
+          content.classList.replace("selection__box__content--full", "selection__box__content--void");
+          content.innerHTML = "Distrito";
+        }
+      }
+      if (document.getElementById("provincia-input"))
+        document.getElementById("provincia-input").value = provincia;
+        if (document.getElementById("distrito-input"))
+              document.getElementById("distrito-input").value = "";
+      selection.classList.remove("selection--disabled");
+      fetch(`/api/get/distritos?provincia=${provincia}`)
+      .then(response => response.json())
+      .then(data => {
+        let distritoArray = data;
+        let distritosHTML = "";
+        for (let i = 0; i < distritoArray.length; i++)
+          distritosHTML += '<div class="selection__option__item" pk="' + distritoArray[i].id + '">' + distritoArray[i].nombre + '</div>'
+        document.getElementById("distritoList").innerHTML = distritosHTML;
+
+        let itemArray = document.getElementById("distritoList").querySelectorAll(".selection__option__item");
+        itemArray.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            content.innerHTML = e.currentTarget.innerHTML;
+            if (document.getElementById("distrito-input"))
+              document.getElementById("distrito-input").value = e.currentTarget.getAttribute("pk");
+
+            if(optionList.classList.contains("selection__option--open")){
+              optionList.classList.replace("selection__option--open", "selection__option--close");
+              icon.classList.replace("selection__box__icon--up", "selection__box__icon--down");
+            }
+            if(content.classList.contains("selection__box__content--void")){
+              content.classList.replace("selection__box__content--void", "selection__box__content--full");
+            }
+          });
+        });
+      });
+    }
+    // Agrega animacion a los checklist
+    function activarCheckList (){
+      checklistArray = document.querySelectorAll(".checklist");
+      (checklistArray.length > 0 ) && checklistArray.forEach((check) => {
+        radioInput = check.querySelector(".checklist__input");
+        radioInput.addEventListener('change', (e) =>{
+          checklistArray.forEach((c) => {
+            marca = c.querySelector(".checklist__marca");
+            if(marca.classList.contains("checklist__marca--active")){
+              marca.classList.replace("checklist__marca--active", "checklist__marca--desactive");
+            }
+          });
+          marca = e.target.parentNode.querySelector(".checklist__marca");
+          if(marca.classList.contains("checklist__marca--desactive")){
+            marca.classList.replace("checklist__marca--desactive", "checklist__marca--active");
+          }
+        })
+      });
+    }
+
     activarAnimacionMenusDesplegables();
     activarCheckList();
     
@@ -139,9 +207,35 @@
       });
     }
 
+    function reiniciar() {
+      document.getElementById("provincia-input").value = ""
+      document.getElementById("distrito-input").value = ""
+      document.getElementById("categoria-input").value = ""
+      document.getElementById("distritoSelection").classList.add("selection--disabled")
+      let provincia = document.getElementById("provincia")
+      let distrito = document.getElementById("distrito")
+      let checklist = document.querySelectorAll(".checklist__input");
+      provincia.innerText = "Provincia";
+      distrito.innerText = "Distrito";
+      if(provincia.classList.contains("selection__box__content--full"))
+        provincia.classList.replace("selection__box__content--full", "selection__box__content--void");
+      if(distrito.classList.contains("selection__box__content--full"))
+        distrito.classList.replace("selection__box__content--full", "selection__box__content--void");
+      (checklist) && checklist.forEach(checkitem => {
+        checkitem.checked = false;
+      });
+
+      marcatArray = document.querySelectorAll(".checklist__marca");
+      (marcatArray.length > 0 ) && marcatArray.forEach((marca) => {
+        if(marca.classList.contains("checklist__marca--active"))
+          marca.classList.replace("checklist__marca--active", "checklist__marca--desactive");
+      });
+      pedirCards();
+    }
+
     function pedirCards(){
-      let provincia = document.getElementById("provincia").innerText;
-      let distrito = document.getElementById("distrito").innerText;
+      let provincia = document.getElementById("provincia-input").value;
+      let distrito = document.getElementById("distrito-input").value;
       let categoria;
       let checklist = document.querySelectorAll(".checklist__input");
       (checklist) && checklist.forEach(checkitem => {
@@ -153,7 +247,7 @@
       cardGalery = document.querySelector(".favoritos__resultado__galeria");
       cardGalery.innerHTML = '<h3 class="respuesta">Cargando...</h3>';
 
-      let url = `/api/favoritos?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`;
+      let url = `/api/get/favoritos?provincia=${provincia}&distrito=${distrito}&categoria=${categoria}`;
       fetch(url)
         .then(response => response.json())
         .then(data => {

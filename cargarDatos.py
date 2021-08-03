@@ -24,11 +24,11 @@ with open('data.json') as file:
   print("Se añadio las provincias")
 
   for categoria in categorias:
-    Categoria.objects.create(nombre=categoria, tipo=True)
+    Categoria.objects.create(nombre=categoria["nombre"], tipo=categoria["is_tangible"])
   print("Se añadio las categorias")
 
   for recurso in recursos:
-    r = Recurso.objects.create(nombre=recurso["nombre"], image_URL=recurso["imagen"], subtitulo=recurso["subtitulo"], descripcion=recurso["descripcion"], distrito_id=Distrito.objects.get(nombre=recurso["ubicacion"]["distrito"]), categoria_id=Categoria.objects.get(nombre=recurso["categoria"]))
+    r = Recurso.objects.create(nombre=recurso["nombre"], image_URL=recurso["imagen"], subtitulo=recurso["subtitulo"], descripcion=recurso["descripcion"], distrito_id=Distrito.objects.get(nombre=recurso["ubicacion"]["distrito"]), categoria_id=Categoria.objects.get(translations__nombre=recurso["categoria"]))
     Coordenada.objects.create(latitud=recurso["coordenadas"]["latitud"], longitud=recurso["coordenadas"]["longuitud"], recurso_id=r)
   print("Se añadio los recursos")
   

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}{{ nombre }}{% endblock %}
 {% block content %}
@@ -37,7 +38,7 @@
 <div id="calificacion" class="calificacion"></div>
 <form id="calificacion-formulario" class="calificacion-form"></form>
 
-<h4 class="recomendados__titulo">Recomendados para ti</h4>
+<h4 class="recomendados__titulo">{% trans 'Recomendado para ti' %}</h4>
 <div class="recomendados">
   <span class="recomendados__button--izquierda"><i class="fas fa-chevron-left"></i></span>
   <div class="recomendados__galeria">
@@ -57,7 +58,7 @@
             <span class="corazon__icon" onclick="addFavoritos(event, '{{ card.nombre }}')"><i class="fas fa-heart"></i><i class="far fa-heart"></i></span>
             <span class="corazon__numero">{{ card.corazon.contador }}</span>
           </div>
-          <a class="flecha" href="/destinos/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
+          <a class="flecha" href="/recurso-turistico/{{ card.nombre }}/"><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     {% endfor %}
@@ -66,7 +67,7 @@
 </div>
 
 <section id="comentarios__seccion" class="comentarios">
-  <h4 class="comentarios__titulo">Comentarios <span id="num-comentarios" class="comentarios__titulo__mas">({{ comentarios|length }} opiniones)</span></h4>
+  <h4 class="comentarios__titulo">{% trans 'Comentarios' %}<span id="num-comentarios" class="comentarios__titulo__mas">({{ comentarios|length }} {% trans 'opiniones' %})</span></h4>
   <form class="comentarios__formulario">
     <div class="comentarios__formulario__avatar">
       {% if user.is_authenticated %}
@@ -75,7 +76,7 @@
         <span class="comentarios__formulario__avatar__icon"><i class="fas fa-user"></i></span>
       {% endif %}
     </div>
-    <textarea id="comentario-input" name="comentario" class="comentarios__formulario__input" placeholder="Añadir comentario"></textarea>
+    <textarea id="comentario-input" name="comentario" class="comentarios__formulario__input" placeholder="{% trans 'Agregar un comentario' %}"></textarea>
     <button type="submit" class="comentarios__formulario__button" onclick="enviarComentario(event)"><i class="far fa-paper-plane"></i></button>
   </form>
   <div id="comentarios-list"></div>
@@ -114,13 +115,14 @@
     let formMemo = document.getElementById("calificacion-formulario").innerHTML;
 
     document.getElementById("calificacion-formulario").innerHTML = `
-    <h4 class="calificacion__titulo">Actualizando ...</h4>
+    <h4 class="calificacion__titulo">{% trans 'Actualizando...' %}</h4>
     `;
     
     fetch(`/api/update/calificacion?nombre=${nombre}&accesibilidad=${formData.get("Accesibilidad")}&aforo=${formData.get("Aforo")}&eco_amigable=${formData.get("EcoAmigable")}&educativo=${formData.get("Educativo")}&recreacional=${formData.get("Recreacional")}`)
       .then(response => response.json())
       .then(data => {
-        if (data.error && data.error.message == "No tiene los permisos") {
+        console.log(data)
+        if (data.message == "Sin permisos") {
           let modal = document.getElementById("modal-login");
           if(modal.classList.contains("modal--desactive"))
             modal.classList.replace("modal--desactive", "modal--active")
@@ -128,7 +130,7 @@
           document.getElementById("calificacion-formulario").style.display = "none";
           document.getElementById("calificacion-formulario").innerHTML = formMemo;
         }
-        if (data.successful) {
+        if (data.message == "Se actualizo la calificacion" || data.message == "Se añadio la calificacion") {
           generarCalificacion();
         }
       });
@@ -201,7 +203,7 @@
 
   function iniciarMap(){
     let nombre = document.querySelector(".slide__titulo").innerHTML;
-    fetch(`/api/coordenadas?nombre=${nombre}`)
+    fetch(`/api/get/coordenadas?nombre=${nombre}`)
     .then(response => response.json())
     .then(data => {
       let coord = {lat: data.latitud, lng: data.longuitud};
@@ -224,9 +226,9 @@
         criteriosButtonHTML += generarCriterioButton(key, mi_calificacion[key] * 20);
       }
     }
-    let calificacionFormHTML = `<h4 class="calificacion__titulo">Calificacion</h4>
+    let calificacionFormHTML = `<h4 class="calificacion__titulo">{% trans 'Calificación' %}</h4>
     <div class="calificacion__criterios">${criteriosButtonHTML}</div>
-    <button class="button" type="submit" onclick="enviarCalificacion(event)">Enviar calificacion</button>`;
+    <button class="button" type="submit" onclick="enviarCalificacion(event)">{% trans 'Enviar calificación' %}</button>`;
     return calificacionFormHTML;
   };
 
@@ -236,14 +238,14 @@
       criteriosHTML += generarCriterio(labelsArray[i], dataArray[i] * 20);
     }
     let calificacionHTML = `
-    <h4 class="calificacion__titulo">Calificacion <span class="calificacion__titulo__mas">(${opiniones} opiniones)</span></h4>
+    <h4 class="calificacion__titulo">{% trans 'Calificación' %} <span class="calificacion__titulo__mas">(${opiniones} {% trans 'opiniones' %})</span></h4>
     <div id="criterios" class="calificacion__criterios">
       ${criteriosHTML}
     </div>
     <div class="calificacion__grafica">
       <canvas id="grafica_radar" class="calificacion__grafica__radar" width="150" height="80"></canvas>
     </div>
-    <button class="button" onclick="activarCalificacion()">Calificar</button>`;
+    <button class="button" onclick="activarCalificacion()">{% trans 'Calificar' %}</button>`;
     return calificacionHTML;
   };
 
@@ -251,7 +253,7 @@
     let nombre = document.querySelector(".slide__titulo").innerHTML;
     Chart.defaults.global.defaultFontFamily = "Lato";
     Chart.defaults.global.defaultFontSize = 18;
-    fetch(`/api/calificacion?nombre=${nombre}`)
+    fetch(`/api/get/calificacion?nombre=${nombre}`)
     .then(response => response.json())
     .then(data => {
       let labelsArray = [];
@@ -321,7 +323,7 @@
             </div>
             <div class="comentarios__item__datos">
               <span class="comentarios__item__datos__nombre">${usuario.nombre}
-                ${editable ? `<button class="comentarios__item__datos__nombre__button" onclick="borrarComentario(${id})">[ Eliminar ]</button>` : ""}
+                ${editable ? `<button class="comentarios__item__datos__nombre__button" onclick="borrarComentario(${id})">{% trans '[ Eliminar ]' %}</button>` : ""}
               </span>
               <span class="comentarios__item__datos__fecha">${fecha}</span>
             </div>
@@ -333,14 +335,14 @@
       });
     }
     else{
-      comentarioHTML += `<h4 class="comentarios__vacio">Aun nadie ha comentado</h4>`
+      comentarioHTML += `<h4 class="comentarios__vacio">{% trans 'Aún nadie ha comentado' %}</h4>`
     }
     return comentarioHTML;
   }
 
   function pedirComentario(pagina) {
     let nombre = document.querySelector(".slide__titulo").innerHTML;
-    fetch(`/api/get/comentario/?nombre=${nombre}&pagina=${pagina}`)
+    fetch(`/api/get/comentario?nombre=${nombre}&pagina=${pagina}`)
     .then(response => response.json())
     .then(data => {
       if(data.error){
@@ -353,10 +355,10 @@
         else
           document.getElementById("comentarios-list").innerHTML += comentarioHTML;
         if (data.siguiente_pagina)
-          document.getElementById("ver-mas").innerHTML = `<button class="comentarios__button" onclick="pedirComentario(${data.siguiente_pagina})">Cargar más</button>`;
+          document.getElementById("ver-mas").innerHTML = `<button class="comentarios__button" onclick="pedirComentario(${data.siguiente_pagina})">{% trans 'Cargar más' %}</button>`;
         else
           document.getElementById("ver-mas").innerHTML = "";
-        document.getElementById("num-comentarios").innerHTML = `(${data.cant_comentarios} opiniones)`
+        document.getElementById("num-comentarios").innerHTML = `(${data.cant_comentarios} {% trans 'opiniones' %})`
       }
     });
   }
@@ -383,7 +385,7 @@
   }
 
   function borrarComentario(id){
-    fetch(`/api/delete/comentario/?id=${id}`)
+    fetch(`/api/delete/comentario?id=${id}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
